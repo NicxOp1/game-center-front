@@ -32,6 +32,20 @@ export default function Header() {
             </a>
           </button>
         </li>
+        <li className="content-buttom-ancor">
+          <button class="btn-header">
+            <a className="ancor-home" href="-">
+              CART
+            </a>
+          </button>
+        </li>
+        <li className="content-buttom-ancor">
+          <button class="btn-header">
+            <a className="ancor-home" href="-">
+              COMMUNITY
+            </a>
+          </button>
+        </li>
       </ul>
       <ul className="nav">
         <li className="content-buttom-ancor">

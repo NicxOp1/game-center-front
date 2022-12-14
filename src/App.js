@@ -1,7 +1,8 @@
-import { Footer } from "./layout/Footer/Footer";
-import Header from "./layout/Header/Header";
+import { Footer } from "./layout/footer/Footer"
+import Header from "./layout/header/Header"
 // import Home from "./Pages/Home";
-import SignInUp from "./Pages/SignInUp";
+import SignInUp from "./pages/SignInUp"
+
 
 function App() {
   return (

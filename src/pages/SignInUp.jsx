@@ -1,7 +1,76 @@
 import React from "react";
 import "./signInUp.css";
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import userActions from "../Redux/Actions/userActions";
+import axios from "axios";
+import {BASE} from '../Api/url'
+import Swal from 'sweetalert2'
 
 export default function SignInUp() {
+
+let dispatch= useDispatch()
+let {SignIn,}= userActions
+//para log-in
+let email= useRef()
+let password= useRef()
+//para sign up
+let formRef= useRef()
+//login
+function Login(){
+  let signIn={
+    email: email.current.value,
+    password: password.current.value
+  }
+  dispatch(SignIn(signIn))
+}
+// para sign up
+ let handleSubmit=async(e)=>{
+  e.preventDefault()
+  let form={
+    name: formRef.current.elements.name.value,
+    lastName: formRef.current.elements.lastName.value,
+    email: formRef.current.elements.email.value,
+    photo: formRef.current.elements.photo.value,
+    age: formRef.current.elements.age.value,
+    password:formRef.current.elements.password.value,
+  }
+  console.log(form)
+   await axios.post(`${BASE}/auth/`, form)
+   .then((res=>{
+    console.log(res)
+      try{
+        if (res.data.success){
+          Swal.fire({
+            background:'#151513',
+            position: 'center',
+            icon: 'success',
+            title: 'Please check your email and verified your account',
+            showConfirmButton: false,
+            timer: 3500
+          })
+        }else{
+          Swal.fire({
+               background:'#151513',
+              position: 'center',
+              icon: 'error',
+              title: res.data.message,
+              showConfirmButton: false,
+              timer: 3500
+            })
+        }
+
+      }
+      catch(error){
+        console.log(error)
+      }
+
+
+   }))
+ }
+
+ 
+
   return (
     <>
       <div className="content-sign-in-up">
@@ -33,9 +102,9 @@ export default function SignInUp() {
                                 name="logemail"
                                 className="form-style"
                                 placeholder="Your Email"
-                                id="logemail"
-                                autocomplete="off"
-                              />
+                                
+                              ref={email}
+                              required/>
                               <i className="input-icon"></i>
                             </div>
                             <div className="form-group mt-2">
@@ -44,14 +113,15 @@ export default function SignInUp() {
                                 name="logpass"
                                 className="form-style"
                                 placeholder="Your Password"
-                                id="logpass"
                                 autocomplete="off"
+                                ref={password}
+                                required
                               />
                               <i className="input-icon uil uil-lock-alt"></i>
                             </div>
-                            <a href="#" className="btn mt-4">
+                            <button className="btn mt-4" onClick={Login}>
                               submit
-                            </a>
+                            </button>
                             <p className="link-sign-in-up">
                               <a href="#0" className="link-sign-in-up">
                                 Forgot your password?
@@ -62,78 +132,78 @@ export default function SignInUp() {
                       </div>
                       <div className="card-back">
                         <div className="center-wrap">
-                          <div className="content-sign-in-up ">
+                          <form className="content-sign-in-up" ref={formRef}>
                             <h4 className="title-sign-in-up">Sign Up</h4>
                             <div className="form-group">
                               <input
                                 type="text"
-                                name="logname"
+                                name="name"
                                 className="form-style"
                                 placeholder="Your Name"
-                                id="logname"
                                 autocomplete="off"
+                                required
                               />
                               <i className="input-icon"></i>
                             </div>
                             <div className="form-group">
                               <input
                                 type="text"
-                                name="logname"
+                                name="lastName"
                                 className="form-style"
                                 placeholder="Your Last Name"
-                                id="logname"
                                 autocomplete="off"
+                                required
                               />
                               <i className="input-icon"></i>
                             </div>
                             <div className="form-group">
                               <input
                                 type="text"
-                                name="logname"
+                                name="photo"
                                 className="form-style"
                                 placeholder="Photo"
-                                id="logname"
                                 autocomplete="off"
+                                required
                               />
                               <i className="input-icon"></i>
                             </div>
                             <div className="form-group">
                               <input
                                 type="number"
-                                name="logname"
+                                name="age"
                                 className="form-style"
                                 placeholder="Age"
-                                id="logname"
                                 autocomplete="off"
+                                required
                               />
                               <i className="input-icon"></i>
                             </div>
                             <div className="form-group">
                               <input
                                 type="email"
-                                name="logemail"
+                                name="email"
                                 className="form-style"
                                 placeholder="Your Email"
-                                id="logemail"
                                 autocomplete="off"
+                                required
                               />
                               <i classNameName="input-icon"></i>
                             </div>
                             <div className="form-group">
                               <input
                                 type="password"
-                                name="logpass"
+                                name="password"
                                 className="form-style"
                                 placeholder="Your Password"
-                                id="logpass"
                                 autocomplete="off"
+                                required
                               />
                               <i className="input-icon"></i>
                             </div>
-                            <a href="#" className="btn mt-4">
+                            <button className="btn mt-4" onClick={handleSubmit}>
                               submit
-                            </a>
-                          </div>
+                            </button>
+                          </form>
                         </div>
                       </div>
                     </div>

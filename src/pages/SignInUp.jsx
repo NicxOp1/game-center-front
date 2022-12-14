@@ -1,7 +1,7 @@
 import React from "react";
 import "./signInUp.css";
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import userActions from "../Redux/Actions/userActions";
 import axios from "axios";
 import {BASE} from '../Api/url'
@@ -10,7 +10,9 @@ import Swal from 'sweetalert2'
 export default function SignInUp() {
 
 let dispatch= useDispatch()
-let {SignIn,}= userActions
+let {SignIn, }= userActions
+let { logged, name} = useSelector(state=>state.userReducer)
+
 //para log-in
 let email= useRef()
 let password= useRef()
@@ -23,6 +25,18 @@ function Login(){
     password: password.current.value
   }
   dispatch(SignIn(signIn))
+  if(logged){
+    Swal.fire({
+      background:'#151513',
+      position: 'center',
+      icon: 'success',
+      title: `Welcome ${name}`,
+      showConfirmButton: false,
+      timer: 3500
+    })
+  } 
+  
+
 }
 // para sign up
  let handleSubmit=async(e)=>{
@@ -35,10 +49,10 @@ function Login(){
     age: formRef.current.elements.age.value,
     password:formRef.current.elements.password.value,
   }
-  console.log(form)
+ 
    await axios.post(`${BASE}/auth/`, form)
    .then((res=>{
-    console.log(res)
+ 
       try{
         if (res.data.success){
           Swal.fire({
@@ -62,7 +76,7 @@ function Login(){
 
       }
       catch(error){
-        console.log(error)
+        
       }
 
 
@@ -75,10 +89,9 @@ function Login(){
     <>
       <div className="content-sign-in-up">
         <div className="section-sign-in-up">
-          <div className="container">
-            <div className="row full-height justify-content-center">
-              <div className="col-12 text-center align-self-center py-5">
-                <div className="section pb-5 pt-5 pt-sm-2 text-center">
+         
+              
+              
                   <h6 className="subtitle-sign-in-ip">
                     <span>Log In </span>
                     <span>Sign Up</span>
@@ -89,8 +102,10 @@ function Login(){
                     id="reg-log"
                     name="reg-log"
                   />
-                  <label for="reg-log"></label>
-                  <div className="card-3d-wrap mx-auto">
+                  
+                
+                </div>
+                <div className="card-3d-wrap">
                     <div className="card-3d-wrapper">
                       <div className="card-front">
                         <div className="center-wrap">
@@ -99,7 +114,7 @@ function Login(){
                             <div className="form-group">
                               <input
                                 type="email"
-                                name="logemail"
+                                name="email"
                                 className="form-style"
                                 placeholder="Your Email"
                                 
@@ -208,12 +223,11 @@ function Login(){
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+           
+         
+     
+    
     </>
   );
 }

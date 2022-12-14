@@ -8,6 +8,7 @@ body {
   background-image: url("https://i.gifer.com/origin/e2/e2aec645e3f805bfeef5468bc9bf3a34.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
 }
 .content-sign-in-up {
   display: flex;
@@ -50,7 +51,7 @@ h6 span {
 .full-height {
   display: flex;
   justify-content: center;
-  min-height: 70vh;
+  min-height: 100vh;
   align-items: center;
 }
 [type="checkbox"]:checked,

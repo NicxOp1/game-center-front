@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import SignInUp from "./SignInUp";
 
 export default function Home() {
   return (

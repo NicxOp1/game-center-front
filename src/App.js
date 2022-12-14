@@ -1,4 +1,4 @@
-import { ComponentRoutes } from "./ComponentRoutes";
+import  ComponentRoutes  from "./ComponentRoutes";
 import Layout from "./layout/Layout";
 
 

@@ -1,15 +1,16 @@
 import React from 'react'
 import Header from './header/Header'
 import { Footer } from './footer/Footer'
-import Arrow from './footer/Arrow'
+
 export default function Layout(props) {
+    console.log(props)
   return (
     <div className='App'>
-        <Arrow/>
         <Header/>
+        <div>
         {props.children}
+        </div>
         <Footer/>
-        
     </div>
   )
 }

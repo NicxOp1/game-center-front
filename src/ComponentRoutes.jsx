@@ -2,7 +2,7 @@ import React from 'react'
 import { Route,Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import SignInUp from './pages/SignInUp'
-export const ComponentRoutes=()=> {
+export default function ComponentRoutes() {
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>

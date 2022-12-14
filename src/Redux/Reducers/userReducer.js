@@ -1,6 +1,6 @@
 import {createReducer} from '@reduxjs/toolkit'
 import userActions from '../Actions/userActions'
- const { SignIn } = userActions
+ const { SignIn, logWithToken } = userActions
 
 const InitialState={
 id: '',
@@ -22,7 +22,7 @@ const userReducer = createReducer(InitialState,
                 if (success){
                     let user= action.payload.user
                     let token= action.payload.token 
-                    // localStorage.setItem('token', JSON.stringify({token: {user:token}}))
+                    localStorage.setItem('token', JSON.stringify({token: {user:token}}))
                     let newState ={
                         ...state,
                         id: user.id,
@@ -43,7 +43,33 @@ const userReducer = createReducer(InitialState,
                     return newState
                 }
             })
+            .addCase(logWithToken.fulfilled, (state, action) => {
 
+
+                const { success, user } = action.payload
+                if (success) {
+                    // const user=action.payload.user
+                    
+                  
+                    // let { token } = response
+                    let newState = {
+                        ...state,
+                        name: user.name,
+                        photo: user.photo,
+                        logged: true,
+                        token: user.token,
+                        id: user.id,
+                        role: user.role
+                    }
+                    return newState
+                } else {
+                    let newState = {
+                        ...state,
+                        mensaje: action.payload.response
+                    }
+                    return newState
+                }
+            })
 
 
             

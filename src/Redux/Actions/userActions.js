@@ -52,6 +52,7 @@ const logWithToken=  createAsyncThunk('logWithToken', async(token)=>{
         console.log(user)
         return{
             success:true,
+            user: user.response.user
 
         }
     }
@@ -59,6 +60,7 @@ const logWithToken=  createAsyncThunk('logWithToken', async(token)=>{
         console.log(error)
         return{
             success: false,
+            response: error.message
         }
     }
 

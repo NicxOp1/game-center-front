@@ -13,7 +13,7 @@ h1,h3,h2,h4{
   flex-direction: column;
   background-image: url('https://img.freepik.com/foto-gratis/genial-figura-triangular-geometrica-luz-laser-neon-ideal-fondos_181624-11068.jpg?w=900&t=st=1671039366~exp=1671039966~hmac=b1522170a15800aa5d1111a5d3c443543465e5c3cf3e3350a969f14492e23770') ;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   justify-content: space-between;
 }
@@ -44,7 +44,7 @@ h1,h3,h2,h4{
   align-items: flex-end;
   z-index: 10;
   padding: .5rem;
-  margin-top: 26.5rem;
+  margin-top: 22.5rem;
 }
 .divHome2 h2{
   display: flex;
@@ -53,54 +53,188 @@ h1,h3,h2,h4{
   padding: 2rem;
 }
 .photoContainerHome{
-  margin:2rem;
-  height: 30%;
+  margin: 1rem -3rem;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
+/*   position: relative; */
+  justify-content: center;
+  align-items: center;
+  height: 11rem;
   width: 100%;
+  
+}
+.css-1gzxeik{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 .divHome2{
   margin-top: -1.5rem;
-  height: 100vh;
+  height: auto;
   background-image: linear-gradient(180deg,black, rgb(129, 23, 129) );
   width: 100%;
 }
+.fade{
+  position: relative;
+  height: 100%!important;
+  width: 100%!important;
+}
 .imgDiv{
+/*   position: relative; */
   box-shadow:
        inset 0 -3em 3em rgba(0,0,0,0.1),
-
              0.3em 0.3em 1em rgba(0,0,0,0.3);
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter:blur(3rem);
   display: flex;
   border-radius: 1rem;
   height: 100%;
-  width: 20%;
-  justify-content: flex-start;
-  padding: 1rem;
-  gap:1rem;
+  width: 100%;
+  justify-content: center;
+/*   padding: 1rem; */
   align-items: center;
-  flex-direction: column;
+z-index: 15;
 }
 .imgDiv img{
-  height: 9rem;
-  width: 15rem;
+  height:100%;
+  width:100%;
   border-radius: 1rem;
-  
+  z-index: 16;
+}
+.imgDivData{
+ position: absolute;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+/*   backdrop-filter:blur(3rem); */
+  border-radius: 1rem;
+  height:100%;
+  margin-left: -9rem;
+  width: 100%;
+
+  align-items: center;
+  z-index: 20;
+}
+.snip1577 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+  width: 30rem;
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  background: #000;
 }
 
-.btn-prev{
-  height: 50%;
-  width:4%;
-  background-color: rgba(255,255,255,0.05);
-  border-radius: .5rem;
-  border:hidden;
+.snip1577 *,
+.snip1577:before,
+.snip1577:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-.btn-next{
-  height: 50%;
-  width:4%;
-  background-color: rgba(255,255,255,0.05);
-  border-radius: .5rem;
-  border:hidden;
+
+.snip1577 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+
+.snip1577:before,
+.snip1577:after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  content: '';
+  background-color: #fff;
+  z-index: 1;
+  opacity: 0;
+}
+
+.snip1577:before {
+  width: 0;
+  height: 1px;
+}
+
+.snip1577:after {
+  height: 0;
+  width: 1px;
+}
+
+.snip1577 figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 15px 20px;
+}
+
+.snip1577 h3,
+.snip1577 h4 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: normal;
+  opacity: 0;
+}
+
+.snip1577 h4 {
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.snip1577 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.snip1577:hover img,
+.snip1577.hover img {
+  zoom: 1;
+  filter: alpha(opacity=20);
+  -webkit-opacity: 0.2;
+  opacity: 0.2;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before,
+.snip1577:hover:after,
+.snip1577.hover:after {
+  opacity: 1;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.snip1577:hover:before,
+.snip1577.hover:before {
+  width: 40px;
+}
+
+.snip1577:hover:after,
+.snip1577.hover:after {
+  height: 40px;
+}
+
+.snip1577:hover h3,
+.snip1577.hover h3,
+.snip1577:hover h4,
+.snip1577.hover h4 {
+  opacity: 1;
+}
+
+.snip1577:hover h3,
+.snip1577.hover h3 {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.snip1577:hover h4,
+.snip1577.hover h4 {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }

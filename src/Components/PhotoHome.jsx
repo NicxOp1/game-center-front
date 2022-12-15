@@ -1,5 +1,5 @@
 import React from "react";
-import "../Pages/home.css";
+import "../pages/home.css";
 import { Fade } from "react-awesome-reveal";
 
 export default function PhotoHome(props) {
@@ -9,7 +9,7 @@ export default function PhotoHome(props) {
     <>
       <div className="imgDiv">
         <Fade>
-          <img src={photo} alt="game" />
+          <img src={photo} alt="game"/>
           <h3>{name}</h3>
         </Fade>
       </div>

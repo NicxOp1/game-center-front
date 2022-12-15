@@ -1,0 +1,46 @@
+.clear {
+    clear: both;
+  }
+.content-checbox{
+    display: flex;
+    color: rgba(240, 248, 255, 0.817);
+    align-items: center;
+    gap: 0.6rem;
+}
+  .checkBox-label {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px rgb(50, 108, 196);
+  }
+  
+  .checkBox-label div {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.491);
+    top: -52px;
+    left: -52px;
+    position: absolute;
+    transform: rotateZ(45deg);
+    z-index: 100;
+  }
+  
+  .checkBox-label input[type=checkbox]:checked + div {
+    left: -10px;
+    top: -10px;
+  }
+  
+  .checkBox-label input[type=checkbox] {
+    position: absolute;
+    left: 50px;
+    visibility: hidden;
+  }
+  
+  .transition {
+    transition: 300ms ease;
+  }

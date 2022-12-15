@@ -1,0 +1,22 @@
+.content-library{
+    background: linear-gradient(#02070d,#032b4f);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-library{
+    color: aliceblue;
+}
+
+.content-btn-cards-library{
+    display:flex ;
+}
+
+.content-btn-library{
+
+}
+
+.content-cards-library{
+
+}

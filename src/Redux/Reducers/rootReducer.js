@@ -1,6 +1,8 @@
+import userReducer from './userReducer'
 
 
-const rootReducer = {
 
+const rootReducer ={
+    userReducer,
 }
 export default rootReducer

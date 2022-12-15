@@ -1,0 +1,23 @@
+.content-card-Ditails{
+    display: flex;
+    justify-content: center;
+}
+
+.card-Ditails{
+    display: flex;
+    width: 70%;
+}
+
+.text-card-Ditails{
+    position:absolute;
+    top: 65vh;
+    float: right;
+    color: aliceblue;
+}
+
+.img-card-Ditails{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 2rem;
+}

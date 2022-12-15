@@ -9,12 +9,22 @@ const SignIn= createAsyncThunk('SignIn', async(form)=>{
     try{
         let res= await axios.post(`${BASE}/auth/signin`, form)
         let user= res.data.response
-        console.log(user);
-        return{
-            success:true,
-            user: user.userToken,
-            token: user.token,
+       
+        if (user){
+            return{
+                success:true,
+                user: user.userToken,
+                token: user.token,
+                response: res.data.message
+            }
+
+        }else{
+            return{
+                success:false,
+                response: res.data.message
+            }
         }
+      
 
     }
     catch(error){
@@ -44,15 +54,16 @@ const SignIn= createAsyncThunk('SignIn', async(form)=>{
 //     }
 // })
 const logWithToken=  createAsyncThunk('logWithToken', async(token)=>{
-    console.log(token)
+    //  console.log(token)
     let headers= {headers: {'Authorization': `Bearer ${token}`}}
 
     try{
         let user= await axios.post(`${BASE}/auth/token`, null,headers)
-        console.log(user)
+        //  console.log(user.data)
         return{
             success:true,
-            user: user.response.user
+            user: user.data.response.user,
+            token: token
 
         }
     }
@@ -66,7 +77,26 @@ const logWithToken=  createAsyncThunk('logWithToken', async(token)=>{
 
 })
 
-const logOut= createAsyncThunk('logOut', async()=>{
+const logOut= createAsyncThunk('logOut', async(token)=>{
+    console.log(token)
+    let headers = {headers: {'Authorization': `Bearer ${token}`}}
+    try{
+        let user= await axios.put(`${BASE}/auth/signout`, null,headers)
+         console.log(user.data)
+        return{
+            success:true,
+            token: token,
+            response: user.data
+
+        }
+    }
+    catch(error){
+        console.log(error)
+        return{
+            success: false,
+            response: error.message
+        }
+    }
     
 })
 

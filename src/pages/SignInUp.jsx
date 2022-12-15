@@ -6,12 +6,14 @@ import userActions from "../Redux/Actions/userActions";
 import axios from "axios";
 import {BASE} from '../Api/url'
 import Swal from 'sweetalert2'
+import {useNavigate} from 'react-router-dom'
 
 export default function SignInUp() {
 
 let dispatch= useDispatch()
 let {SignIn, }= userActions
-let { logged, name} = useSelector(state=>state.userReducer)
+let { user, name, response} = useSelector(state=>state.userReducer)
+const navigate = useNavigate()   
 
 //para log-in
 let email= useRef()
@@ -25,7 +27,8 @@ function Login(){
     password: password.current.value
   }
   dispatch(SignIn(signIn))
-  if(logged){
+  console.log(user);
+  if(SignIn){
     Swal.fire({
       background:'#151513',
       position: 'center',
@@ -34,9 +37,17 @@ function Login(){
       showConfirmButton: false,
       timer: 3500
     })
-  } 
+    .then(()=>navigate('/')) 
+  } else {
+    Swal.fire({
+      background:'#151513',
+      icon: 'error',
+      title: 'Check the info you sent:',
+      text: (`${ response }`),
+      
+     })
+    }
   
-
 }
 // para sign up
  let handleSubmit=async(e)=>{
@@ -85,149 +96,63 @@ function Login(){
 
  
 
-  return (
-    <>
-      <div className="content-sign-in-up">
-        <div className="section-sign-in-up">
-         
-              
-              
-                  <h6 className="subtitle-sign-in-ip">
-                    <span>Log In </span>
-                    <span>Sign Up</span>
-                  </h6>
-                  <input
-                    className="checkbox"
-                    type="checkbox"
-                    id="reg-log"
-                    name="reg-log"
-                  />
-                  
-                
-                </div>
-                <div className="card-3d-wrap">
-                    <div className="card-3d-wrapper">
-                      <div className="card-front">
-                        <div className="center-wrap">
-                          <div className="content-sign-in-up">
-                            <h4 className="title-sign-in-up">Log In</h4>
-                            <div className="form-group">
-                              <input
-                                type="email"
-                                name="email"
-                                className="form-style"
-                                placeholder="Your Email"
-                                
-                              ref={email}
-                              required/>
-                              <i className="input-icon"></i>
-                            </div>
-                            <div className="form-group mt-2">
-                              <input
-                                type="password"
-                                name="logpass"
-                                className="form-style"
-                                placeholder="Your Password"
-                                autocomplete="off"
-                                ref={password}
-                                required
-                              />
-                              <i className="input-icon uil uil-lock-alt"></i>
-                            </div>
-                            <button className="btn mt-4" onClick={Login}>
-                              submit
-                            </button>
-                            <p className="link-sign-in-up">
-                              <a href="#0" className="link-sign-in-up">
-                                Forgot your password?
-                              </a>
-                            </p>
-                          </div>
-                        </div>
+ return (
+  <>
+
+          <div className="full-height">
+
+             
+                <h6 className="subtitle-sign-in-ip">
+                  <span>Log In </span>
+                  <span>Sign Up</span>
+                </h6>
+                <input className="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                <label for="reg-log"></label>
+      
+                <div className="card-3d-wrap ">
+                  <div className="card-3d-wrapper">
+                    <div className="card-front">
+                      <div className="center-wrap">
+                    
+                          <h4 className="title-sign-in-up">Log In</h4>
+                    
+                            <input type="email" name="email" className="form-style" placeholder="Your Email"  ref={email} required  />
+                       
+                            <input type="password" name="password" className="form-style" placeholder="Your Password" ref={password} required/>
+                        
+                          <button className="btn mt-4"  onClick={Login}> Log In </button>
+                      
+                        
                       </div>
-                      <div className="card-back">
-                        <div className="center-wrap">
-                          <form className="content-sign-in-up" ref={formRef}>
-                            <h4 className="title-sign-in-up">Sign Up</h4>
-                            <div className="form-group">
-                              <input
-                                type="text"
-                                name="name"
-                                className="form-style"
-                                placeholder="Your Name"
-                                autocomplete="off"
-                                required
-                              />
-                              <i className="input-icon"></i>
-                            </div>
-                            <div className="form-group">
-                              <input
-                                type="text"
-                                name="lastName"
-                                className="form-style"
-                                placeholder="Your Last Name"
-                                autocomplete="off"
-                                required
-                              />
-                              <i className="input-icon"></i>
-                            </div>
-                            <div className="form-group">
-                              <input
-                                type="text"
-                                name="photo"
-                                className="form-style"
-                                placeholder="Photo"
-                                autocomplete="off"
-                                required
-                              />
-                              <i className="input-icon"></i>
-                            </div>
-                            <div className="form-group">
-                              <input
-                                type="number"
-                                name="age"
-                                className="form-style"
-                                placeholder="Age"
-                                autocomplete="off"
-                                required
-                              />
-                              <i className="input-icon"></i>
-                            </div>
-                            <div className="form-group">
-                              <input
-                                type="email"
-                                name="email"
-                                className="form-style"
-                                placeholder="Your Email"
-                                autocomplete="off"
-                                required
-                              />
-                              <i classNameName="input-icon"></i>
-                            </div>
-                            <div className="form-group">
-                              <input
-                                type="password"
-                                name="password"
-                                className="form-style"
-                                placeholder="Your Password"
-                                autocomplete="off"
-                                required
-                              />
-                              <i className="input-icon"></i>
-                            </div>
-                            <button className="btn mt-4" onClick={handleSubmit}>
-                              submit
-                            </button>
-                          </form>
-                        </div>
+                    </div>
+
+                  {/* CARD SIGN UP */}
+                    <div className="card-back">
+                      <div className="center-wrap">
+                        <form className="content-sign-in-up " ref={formRef}>
+                          <h4 className="title-sign-in-up">Sign Up</h4>
+                  
+                            <input type="text" name="name" className="form-style" placeholder="Your Name"/>
+                
+                          <input  type="text" name="lastName" className="form-style"  placeholder="Your Last" />
+
+                            <input type="text" name="photo" className="form-style" placeholder="Photo" />
+
+                            <input type="number"   name="age"  className="form-style" placeholder="Age" />
+
+                            <input type="email" name="email" className="form-style" placeholder="Your Email"/>
+
+                            <input type="password" name="password" className="form-style" placeholder="Your Password" />
+
+                          <button  className="btn" onClick={handleSubmit}>  Join! </button>
+                        </form>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
-           
+          
          
-     
-    
-    </>
-  );
+  </>
+);
 }

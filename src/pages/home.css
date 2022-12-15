@@ -3,103 +3,104 @@
   padding: 0%;
   box-sizing: border-box;
 }
-.main-title-home {
-  margin-top: 1rem;
-  font-size: 2.5rem;
-  font-family: serif;
+h1,h3,h2,h4{
+  font-weight: bold;
 }
-.content-home-main {
+.divHome1{
+  height: 120vh;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
-  min-height: 90vh;
-  background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/506524b5fe295a46bca10adb/vcvv-min.jpg");
-  background-position: center;
+  flex-direction: column;
+  background-image: url('https://img.freepik.com/foto-gratis/genial-figura-triangular-geometrica-luz-laser-neon-ideal-fondos_181624-11068.jpg?w=900&t=st=1671039366~exp=1671039966~hmac=b1522170a15800aa5d1111a5d3c443543465e5c3cf3e3350a969f14492e23770') ;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  width: 100%;
+  justify-content: space-between;
 }
-.content-home-1 {
+.titleHome{
   display: flex;
-  flex-wrap: wrap;
+  z-index: 9;
   justify-content: center;
+  flex-direction:column ;
+  align-items: center;
+  position: absolute;
+  gap: 2rem;
+  height:29rem!important;
+  width: 100%;
+  backdrop-filter: blur(3px);
 }
-
-.content-video {
-  height: 15rem;
-  width: 25rem;
-  margin: 1.5rem;
+.titleHome h1{
+  font-size:7rem;
+  color: rgb(129, 23, 129);
+  box-shadow: 5px;
 }
-.title-home {
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
+.titleHome h4{
+  color: aquamarine;
+  font-size: 2rem;
 }
-.video-home {
-  border-radius: 75px 0px;
-  height: 85%;
+.divHome1 h2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 10;
+  padding: .5rem;
+  margin-top: 26.5rem;
+}
+.divHome2 h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.photoContainerHome{
+  margin:2rem;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
   width: 100%;
 }
+.divHome2{
+  margin-top: -1.5rem;
+  height: 100vh;
+  background-image: linear-gradient(180deg,black, rgb(129, 23, 129) );
+  width: 100%;
+}
+.imgDiv{
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
 
-.card:hover {
-  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter:blur(3rem);
+  display: flex;
+  border-radius: 1rem;
+  height: 100%;
+  width: 20%;
+  justify-content: flex-start;
+  padding: 1rem;
+  gap:1rem;
+  align-items: center;
+  flex-direction: column;
+}
+.imgDiv img{
+  height: 9rem;
+  width: 15rem;
+  border-radius: 1rem;
+  
 }
 
-.card_title {
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  transition: transform 0.5s;
-  font: 700 1.5rem monospace;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+.btn-prev{
+  height: 50%;
+  width:4%;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: .5rem;
+  border:hidden;
 }
-
-.card:hover .card_title {
-  transform: translateZ(50px);
-}
-
-.card {
-  height: 15rem;
-  width: 25rem;
-  margin: 1.5rem;
-  border: solid 3px;
-  background: #3d319573;
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.5s;
-  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
-}
-
-.card:hover {
-  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
-}
-
-.card_title {
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  transition: transform 0.5s;
-  font: 700 1.5rem monospace;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.card:hover .card_title {
-  transform: translateZ(50px);
-}
-
-@media screen and (max-width: 450px) {
-  .card {
-    height: 10rem;
-    width: 17rem;
-  }
-  .video-home {
-    height: 75%;
-  }
+.btn-next{
+  height: 50%;
+  width:4%;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: .5rem;
+  border:hidden;
 }

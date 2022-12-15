@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import SignInUp from "./pages/SignInUp";
-import AddGame from "./pages/AddGame";
+import SignInUp from "./Pages/SignInUp";
+import AddGame from "./Pages/AddGame";
+import Home from "./Pages/Home";
 
 export default function ComponentRoutes() {
   return (

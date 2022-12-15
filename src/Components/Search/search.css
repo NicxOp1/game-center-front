@@ -1,0 +1,72 @@
+
+.content-search-store{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+
+
+/* input 3 */
+.container {
+  position: relative;
+  width: 200px;
+}
+
+.container input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: rgb(198, 198, 198);
+  padding: 8px;
+}
+
+.container label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(105, 105, 105, 0.7);
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: .5s;
+  font-weight: bold;
+}
+
+.container input:valid ~ label,
+.container input:focus ~ label {
+  color: rgb(10, 131, 212);
+  transform: translateY(-15px);
+  font-size: .6rem;
+}
+
+.container i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #222;
+}
+
+.container i:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffae00, #7e03aa, #00fffb);
+  animation: animate 3s linear infinite;
+}
+
+/* input 4 */
+
+
+
+/* .input:focus {
+  color: rgb(141, 141, 141);
+  background-color: transparent;
+  outline-color: rgb(0, 81, 255);
+  box-shadow: -3px -3px 15px rgb(0, 60, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+} */

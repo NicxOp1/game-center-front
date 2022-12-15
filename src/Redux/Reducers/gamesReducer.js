@@ -16,7 +16,7 @@ const gamesReducer = createReducer(initialState,(builder)=>{
         }
     })
     .addCase(filterGame.fulfilled,(state,action)=>{
-        
+        console.log(action.payload);
         return {
             ...state,
             bestGame:action.payload.splice(0,4)

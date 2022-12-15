@@ -1,16 +1,14 @@
-import React from 'react'
-import Header from './header/Header'
-import { Footer } from './footer/Footer'
+import React from "react";
+import Header from "./Header/Header";
+import { Footer } from "./Footer/Footer";
 
 export default function Layout(props) {
-    console.log(props)
+  console.log(props);
   return (
-    <div className='App'>
-        <Header/>
-        <div>
-        {props.children}
-        </div>
-        <Footer/>
+    <div className="App">
+      <Header />
+      <div>{props.children}</div>
+      <Footer />
     </div>
-  )
+  );
 }

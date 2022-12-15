@@ -10,7 +10,6 @@ export default function ComponentRoutes() {
         <Route path="/" element={<Home/>}/>
         <Route path='/SignInUp' element= {<SignInUp/>}/>
         <Route path='/AddGame' element= {<AddGame/>}/>
-        
     </Routes>
   )
 }

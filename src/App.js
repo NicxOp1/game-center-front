@@ -3,9 +3,9 @@ import Layout from "./layout/Layout";
 import {  useEffect } from 'react'
 import { useDispatch} from 'react-redux'
 import userActions from "./Redux/Actions/userActions";
-import { Footer } from "./layout/footer/Footer";
+/* import { Footer } from "./layout/footer/Footer";
 import Header from "./layout/header/Header";
-import Home from "./pages/Home";
+import Home from "./pages/Home"; */
 
 function App() {
 

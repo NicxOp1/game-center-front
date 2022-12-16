@@ -59,7 +59,7 @@ const logWithToken=  createAsyncThunk('logWithToken', async(token)=>{
     //  console.log(token)
     let headers= {headers: {'Authorization': `Bearer ${token}`}}
     try{
-        let user= await axios.post(`${BASE}/auth/token`, null,headers)
+        let user= await axios.post(`http://localhost:8080/auth/token`, null,headers)
        
         console.log(user.data.response)
         return{
@@ -84,7 +84,7 @@ const logOut= createAsyncThunk('logOut', async(token)=>{
     let headers = {headers: {'Authorization': `Bearer ${token}`}}
     try{
         let user= await axios.put(`${BASE}/auth/signout`, null,headers)
-        //  console.log(user.data)
+        
         return{
             success:true,
             token: token,

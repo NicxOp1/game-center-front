@@ -51,4 +51,9 @@ export const games = [
 ]
 
 
-let check = Array.from(new Set(games.map(e => e.category)))
+/* let check = Array.from(new Set(games.map(e => e.category)))
+
+
+
+
+let check = Array.from(new Set(checket.map(e => e.category))) */

@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import userActions from '../Redux/Actions/userActions';
 import {useNavigate} from 'react-router-dom'
 
-export default function LogOut({props}) {
+export default function LogOut() {
 
 let { logOut } = userActions
 let { token } = useSelector(state => state.userReducer)
@@ -36,6 +36,6 @@ function signOut() {
       }
 
   return (
-    <button onClick={()=>signOut()} className={props}>LogOut </button>  
+    <button onClick={()=>signOut()} className='btn-header'>LogOut </button>  
   )
 }

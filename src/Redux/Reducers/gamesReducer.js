@@ -1,7 +1,7 @@
 import {createReducer} from '@reduxjs/toolkit'
 import gameActions from '../Actions/gamesActions'
 
-const {getGame,filterGame}=gameActions
+const {getGame,filterGame,filterSearch}=gameActions
 const initialState = {
     game:[],
     bestGame:[]
@@ -20,6 +20,12 @@ const gamesReducer = createReducer(initialState,(builder)=>{
         return {
             ...state,
             bestGame:action.payload.splice(0,4)
+        }
+    })
+    .addCase(filterSearch.fulfilled,(state, action) => {
+        return{
+            ...state,
+            game:action.payload
         }
     })
 })

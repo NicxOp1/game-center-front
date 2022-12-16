@@ -1,16 +1,44 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./store.css"
 import CardGames from '../../Components/CardGames/CardGames'
 /* import CardDitails from '../../Components/CardDetails/CardDetails' */
 import Search from '../../Components/Search/Search'
 import { games } from '../../data/games'
 import Checkbox from '../../Components/Checkbox/Checkbox'
-
+import { useDispatch, useSelector } from 'react-redux'
+import axios from 'axios'
+import gameActions from '../../Redux/Actions/gamesActions'
 /* const [hover,setHover] = useState(false) */
 
 export default function Store() {
+  let searchRef = useRef(null)
+  const dispatch = useDispatch()
+  let [checket, setChecket] = useState([])
+  const [value, setValue] = useState('')
+  const {getGame,filterGame,filterSearch} = gameActions
+  const {game} = useSelector((state)=>state.gamesReducer)
+  console.log(game);
 
-  let check = Array.from(new Set(games.map(e => e.category)))
+  useEffect(() => {
+    axios.get(`http://localhost:8080/games`)
+        .then(res => setChecket(res.data.res))
+        .catch(err => console.log(err.message))
+}, [])
+
+
+
+
+
+
+  let controlsearch  = (e) => {
+    let searched = searchRef.current.value
+    console.log(searched)
+    dispatch(filterSearch(searched))
+}
+
+
+  let check = Array.from(new Set(checket.map(e => e.category)))
+
   console.log(check);
   return (
     <div className='content-store'>
@@ -20,7 +48,8 @@ export default function Store() {
       </div>
       <div className='content-cards2'>
         <div>
-        <Search/>
+        <input type="search" ref={searchRef} /* value={filter.name} */ onChange={controlsearch}/>
+        {/* <Search search={search} ref={searchRef} value={filter.name} onChange={controlsearch}/> */}
         </div>
         <div className='content-checkbox-select'>
           <select className='select-store'>
@@ -41,11 +70,7 @@ export default function Store() {
         </div>
         <div className='cont-card'>
         {
-            games.map(e => <CardGames name={e.name} category={e.category} img={e.photo} price={e.price}
-/*               onMouseEnter={(e:React.MouseEvent) => setHover (true)}
-              onMouseLeave={(e:React.MouseEvent) => setHover (false)} */
-            >
-{/*               {hover ? <video src={e.video}/> : <img  src={e.photo}/>} */}
+            game.map(e => <CardGames name={e.name} category={e.category} img={e.photo} price={e.price}>
             </CardGames>)
         }
         </div>

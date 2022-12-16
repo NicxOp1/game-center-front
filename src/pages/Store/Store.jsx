@@ -18,7 +18,7 @@ export default function Store() {
       <div className='content-CardDitails'>
 {/*         <CardDitails/> */}
       </div>
-      <div className='content-cards2'>
+      <div className='content-cards2' style={{marginTop:"5rem"}}>
         <div>
         <Search/>
         </div>

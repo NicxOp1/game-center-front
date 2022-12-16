@@ -1,5 +1,6 @@
 import React from "react";
 import "./profile.css";
+import { BASE } from "../../Api/url";
 
 export default function Profile() {
   return (

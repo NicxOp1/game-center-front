@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 // import { useSelector } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 import "./profile.css";
+import { BASE } from "../../Api/url";
 
 export default function ProfileEdit() {
   // const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function ProfileEdit() {
   //   return async function fetchdata() {
   //     await axios
   //       .get(
-  //         `${URL}/auth/me/${token.id}
+  //         `${BASE}/auth/me/${token.id}
   //         `,
   //         {
   //           headers: {
@@ -45,7 +46,7 @@ export default function ProfileEdit() {
   //     email: email.current.value,
   //   };
   //   try {
-  //     let res = await axios.patch(`${URL}/auth/me/${token.id}`, saveData, {
+  //     let res = await axios.patch(`${BASE}/auth/me/${token.id}`, saveData, {
   //       headers: {
   //         Authorization: `Bearer ${localStorage.getItem("token")}`,
   //       },

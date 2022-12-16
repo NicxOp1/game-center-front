@@ -6,6 +6,7 @@
 import ProfileEdit from "./ProfileEdit";
 import { NavLink } from "react-router-dom";
 import "./profile.css";
+import { BASE } from "../../Api/url";
 
 export default function EditProfile() {
   //   let token = useSelector((store) => store.loginInReducer.token);
@@ -15,7 +16,7 @@ export default function EditProfile() {
   //     return async function fetchdata() {
   //       await axios
   //         .get(
-  //           `${URL}/auth/me/${token.id}
+  //           `${BASE}/auth/me/${token.id}
   //             `,
   //           {
   //             headers: {

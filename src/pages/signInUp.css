@@ -54,7 +54,7 @@ h6 span {
 }
 .checkbox:checked + label,
 .checkbox:not(:checked) + label {
-  position: relative;
+  position: absolute;
   display: block;
   text-align: center;
   width: 60px;
@@ -64,6 +64,7 @@ h6 span {
   margin: 10px auto;
   cursor: pointer;
   background-color: #B758CE;
+  margin-top:-26rem;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before {
@@ -158,9 +159,15 @@ h6 span {
 }
 .subtitle-sign-in-ip {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
   font-size: 1rem;
   color: white;
+  z-index: 15;
   font-weight: 900;
+  margin-top: 8rem;
+  gap: 3rem;
  
 }
 

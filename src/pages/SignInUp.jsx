@@ -12,7 +12,7 @@ export default function SignInUp() {
 
 let dispatch= useDispatch()
 let {SignIn, }= userActions
-let { user, name, response} = useSelector(state=>state.userReducer)
+let { logged, name, response, success} = useSelector(state=>state.userReducer)
 const navigate = useNavigate()   
 
 //para log-in
@@ -21,29 +21,29 @@ let password= useRef()
 //para sign up
 let formRef= useRef()
 //login
-function Login(){
+let  Login= async()=>{
   let signIn={
     email: email.current.value,
     password: password.current.value
   }
-  dispatch(SignIn(signIn))
-  console.log(user);
-  if(SignIn){
-    Swal.fire({
+ const answer= await dispatch(SignIn(signIn))
+console.log(answer.payload)
+  if(answer.payload.success){
+   await Swal.fire({
       background:'#151513',
       position: 'center',
       icon: 'success',
-      title: `Welcome ${name}`,
+      title: `${answer.payload.response}`,
       showConfirmButton: false,
       timer: 3500
     })
     .then(()=>navigate('/')) 
   } else {
-    Swal.fire({
+    await Swal.fire({
       background:'#151513',
       icon: 'error',
       title: 'Check the info you sent:',
-      text: (`${ response }`),
+      text: (`${ answer.payload.response }`),
       
      })
     }
@@ -87,7 +87,11 @@ function Login(){
 
       }
       catch(error){
-        
+        Swal.fire({
+          icon: 'error',
+          title: 'Error, the user email, it´s already exist',
+          text: 'Try again with a new email.',
+        })     
       }
 
 

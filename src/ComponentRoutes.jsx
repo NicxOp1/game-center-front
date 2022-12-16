@@ -4,6 +4,8 @@ import SignInUp from "./Pages/SignInUp";
 import AddGame from "./Pages/AddGame";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart/Cart";
+import Profile from "./Components/Profile/Profile";
+import Store from "./Pages/Store/Store"
 
 export default function ComponentRoutes() {
   return (
@@ -13,6 +15,8 @@ export default function ComponentRoutes() {
       <Route path="/AddGame" element={<AddGame />} />
       <Route path="/Cart" element={<Cart />} />
 
+      <Route path="/Profile" element={<Profile />} />
+      <Route path="/Store" element={<Store />} />
     </Routes>
   );
 }

@@ -1,11 +1,34 @@
 import React from "react";
 import "./profile.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+
 
 export default function Profile() {
+
+  const [user, setUser] = useState([]);
+  let token = useSelector((store) => store.userReducer);
+
+  useEffect(() => {
+    return async function fetchdata() {
+      await axios
+        .get(`http://localhost:8080/auth/me/${token.id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res) => {
+          let userdata = res.data.response;
+          setUser(userdata);
+        });
+    };
+  }, []);
+
   return (
     <>
       <main className="body-content-profile">
-        <div>
+        <div class= "content-principate-profile">
           <div className="config-profile">
             <h1 className="title-profile">ACCOUNT SETTINGS</h1>
             <h2 className="title-profile">Manage Your Account Data</h2>
@@ -17,7 +40,7 @@ export default function Profile() {
               <div className="content-img-profile">
                 <img
                   className="img-profile"
-                  src="https://avatars.cloudflare.steamstatic.com/ef59212b7234514cc64e2eece3af15baf6eface1_full.jpg"
+                  src= {`${token.photo}`}
                   alt="photoUser"
                 />
               </div>
@@ -33,19 +56,22 @@ export default function Profile() {
               <input
                 className="input-profile"
                 type="text"
-                placeholder="Gabriel"
+                value={`${token.name}`}
+                disabled
               />
 
               <input
                 className="input-profile"
                 type="text"
-                placeholder="Cornide"
+                value={`${token.role}`}
+                disabled
               />
 
               <input
                 className="input-profile"
                 type="text"
-                placeholder="gabricornidel@gmail.com"
+                value={`${token.email}`}
+                disabled
               />
 
               <input
@@ -59,7 +85,7 @@ export default function Profile() {
               <input
                 className="input-profile"
                 type="text"
-                placeholder="https://avatars.cloudflare.steamstatic.com/ef59212b7234514cc64e2eece3af15baf6eface1_full.jpg"
+                value={`${token.photo}`}
               />
             </div>
           </div>

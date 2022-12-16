@@ -1,131 +1,142 @@
 * {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
-.body-content-profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/506524b5fe295a46bca10adb/vcvv-min.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.config-profile {
-  text-align: center;
-  margin: 1rem;
-}
-.title-profile {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  margin: 1.5rem;
-  color: white;
-  font-weight: bold;
-  font-size: 2rem;
-}
-.img-profile {
-  margin-top: 0.7rem;
-  border-radius: 1.5rem;
-}
-.button-edit-profile {
-  width: 7rem;
-  height: 1.7rem;
-}
-.content-label {
-  width: 50%;
-}
-.content-text-profile {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  align-items: center;
-}
-.content-profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: solid 3px #080312;
-  border-radius: 2rem;
-  min-height: 55vh;
-  min-width: 70vw;
-  margin: 2rem;
-}
-.label-profile {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-.input-profile {
-  color: white;
-  background-color: #201325e0;
-  text-align: center;
-  padding: 1rem;
-  margin: 1rem;
-  width: 100%;
-  height: 2.5rem;
-}
-.input-profile::placeholder {
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-}
-
-.content-input-profile {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #201325b0;
-  border-radius: 2rem;
-}
-.information-profile {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 50%;
-}
-
-/* <------button ------> */
-.button {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-}
-
-.button {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255, 255, 255, 0.6);
-  --animation-color: violet;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-.button:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color));
-}
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+  .body-content-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/506524b5fe295a46bca10adb/vcvv-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .config-profile {
+    text-align: center;
+    margin: 1rem;
+  }
+  .title-profile {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    margin: 1.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .img-profile {
+    margin-top: 0.7rem;
+    border-radius: 1.5rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .button-edit-profile {
+    width: 7rem;
+    height: 1.7rem;
+  }
+  .content-label {
+    width: 50%;
+  }
+  .content-text-profile {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
+  .content-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 3px #080312;
+    border-radius: 2rem;
+    min-height: 55vh;
+    min-width: 70vw;
+    margin: 2rem;
+  }
+  .label-profile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .input-profile {
+    color: white;
+    background-color: #201325e0;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    height: 2.5rem;
+  }
+  .input-profile::placeholder {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .content-principate-profile{
+    margin-top: 6.2rem;
+  }
+  .content-img-profile{
+    width: 150px;
+    height: 150px;
+  }
+  
+  .content-input-profile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #201325b0;
+    border-radius: 2rem;
+  }
+  .information-profile {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  
+  /* <------button ------> */
+  .button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: violet;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+  

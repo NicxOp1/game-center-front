@@ -7,6 +7,7 @@ const InitialState = {
     name: '',
     lastName: '',
     photo: '',
+    email: '',
     logged: false,
     token: '',
     role: '',
@@ -18,12 +19,12 @@ const userReducer = createReducer(InitialState,
         builder
             .addCase(SignIn.fulfilled, (state, action) => {
                
-                // console.log(action.payload.user);
+               
                 let success = action.payload.success
                 if (success) {
                     let user = action.payload.user
                     let token = action.payload.token
-                   
+                   console.log(user) 
                     localStorage.setItem('token', JSON.stringify({ token: { user: token } }))
                     let newState = {
                         ...state,
@@ -31,13 +32,12 @@ const userReducer = createReducer(InitialState,
                         name: user.name,
                         lastName: user.lastName,
                         photo: user.photo,
+                        email: user.email,
+                        role: user.role,
                         logged: true,
                         token: token,
-                        role: user.role,
                         response: action.payload.response
                     }
-                 
-                //    console.log(newState);
                     return newState
                 } else {
                      console.log(action.payload.response)
@@ -63,7 +63,7 @@ const userReducer = createReducer(InitialState,
             })
             .addCase(logWithToken.fulfilled, (state, action) => {
                 const { success, user, token } = action.payload
-                // console.log(token);
+                 console.log(token);
                 if (success) {
                     // const user=action.payload.user
 
@@ -74,6 +74,7 @@ const userReducer = createReducer(InitialState,
                         name: user.name,
                         lastName: user.lastName,
                         photo: user.photo,
+                        email: user.email,
                         age: user.age,
                         logged: true,
                         token: token,

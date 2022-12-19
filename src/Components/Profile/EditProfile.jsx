@@ -1,35 +1,34 @@
-// import { useState } from "react";
-// import axios from "axios";
-// import { useEffect, useRef } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useState } from "react";
+import axios from "axios";
+import { BASE } from "../../Api/url";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ProfileEdit from "./ProfileEdit";
 import { NavLink } from "react-router-dom";
-import "./profile.css";
-import { BASE } from "../../Api/url";
 
 export default function EditProfile() {
-  //   let token = useSelector((store) => store.loginInReducer.token);
-  //   const [user, setUser] = useState([]);
+  let token = useSelector((store) => store.userReducer);
+  const [user, setUser] = useState([]);
 
-  //   useEffect(() => {
-  //     return async function fetchdata() {
-  //       await axios
-  //         .get(
-  //           `${BASE}/auth/me/${token.id}
-  //             `,
-  //           {
-  //             headers: {
-  //               Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //             },
-  //           }
-  //         )
-  //         .then((res) => {
-  //           let userdata = res.data.response;
-  //           setUser(userdata);
-  //         });
-  //     };
-  //   }, []);
+  useEffect(() => {
+    return async function fetchdata() {
+      await axios
+        .get(
+          `${BASE}/auth/me/${token.id}
+            `,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((res) => {
+          let userdata = res.data.response;
+          setUser(userdata);
+        });
+    };
+  }, []);
 
   return (
     <div class="container-profiles">
@@ -39,16 +38,16 @@ export default function EditProfile() {
             <div>
               <img
                 className="profile-pic"
-                src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/860950/6e1b5f5977036a189465f5455f2c54722c12883d.png"
-                alt="gabriel"
+                src={`${token.photo}`}
+                alt={`${token.name}`}
               />
             </div>
             <div className="profile-name">
-              <h5>Gabriel</h5>
+              <h5>{`${token.name}`}</h5>
             </div>
             <div className="col-1-links">
-              <NavLink to={"/profile"}> Profile</NavLink>
-              <NavLink to={"/profileEdit"}> Edit</NavLink>
+              <NavLink to={"/Profile"}> Profile</NavLink>
+              <NavLink to={"/ProfileEdit"}> Edit</NavLink>
               <hr width="65" />
             </div>
           </div>

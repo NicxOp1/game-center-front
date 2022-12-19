@@ -31,7 +31,7 @@ export default function Header() {
 
               { logged ?(
                 <>
-              <LinkRouter to='' class="btn-header"> PROFILE </LinkRouter>
+              <LinkRouter to='/Profile' class="btn-header"> PROFILE </LinkRouter>
 
                 <LogOut /* props="btn-header" *//>
                 </>)

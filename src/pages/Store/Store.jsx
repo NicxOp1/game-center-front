@@ -46,7 +46,7 @@ export default function Store() {
       <div className='content-CardDitails'>
 {/*         <CardDitails/> */}
       </div>
-      <div className='content-cards2'>
+      <div className='content-cards2' style={{marginTop:"5rem"}}>
         <div>
         <input type="search" ref={searchRef} /* value={filter.name} */ onChange={controlsearch}/>
         {/* <Search search={search} ref={searchRef} value={filter.name} onChange={controlsearch}/> */}

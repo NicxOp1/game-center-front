@@ -3,7 +3,7 @@ import "./store.css"
 import CardGames from '../../Components/CardGames/CardGames'
 /* import CardDitails from '../../Components/CardDetails/CardDetails' */
 import Search from '../../Components/Search/Search'
-import { games } from '../../data/games'
+/* import { games } from '../../data/games' */
 import Checkbox from '../../Components/Checkbox/Checkbox'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
@@ -48,8 +48,7 @@ export default function Store() {
       </div>
       <div className='content-cards2' style={{marginTop:"5rem"}}>
         <div>
-        <input type="search" ref={searchRef} /* value={filter.name} */ onChange={controlsearch}/>
-        {/* <Search search={search} ref={searchRef} value={filter.name} onChange={controlsearch}/> */}
+            <Search/>
         </div>
         <div className='content-checkbox-select'>
           <select className='select-store'>

@@ -125,15 +125,15 @@ console.log(answer.payload)
               
                 </> 
                       <>
-                      <div className="back">
+                      <div className="back" >
                           <h4 >Sign Up</h4>
-                          <div className="sign-up">
+                          <form className="sign-up" ref={formRef}>
                   <input type="text" name="name"  placeholder=" Name"/>
                   <input  type="text" name="lastName"  placeholder=" Last Name" />
                   <input type="number"   name="age"   placeholder="Age" />
                   <input type="text" name="photo"  placeholder="Photo" />
                   <input type="email" name="email"  placeholder=" Email"/> <input type="password" name="password" placeholder="Password" />
-                  </div>
+                  </form>
                   <button onClick={handleSubmit} className='btn'>  Join! </button>
                   </div>
                       </>

@@ -1,7 +1,16 @@
-import {createAction} from '@reduxjs/toolkit'
+import {addListener, createAction} from '@reduxjs/toolkit'
+import { dataset } from 'dom7'
 
-const getCart = createAction('getCart',()=>{
-    
+const getCart = createAction('getCart',(game)=>{
+    a
+    datasetda
+    d
+    addListenerasd
+
+    addListenerasda
+
+    addListener
+    dataset
 })
 
 

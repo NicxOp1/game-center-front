@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import userActions from '../Redux/Actions/userActions';
 import {useNavigate} from 'react-router-dom'
 
+
 export default function LogOut({props}) {
 
 let { logOut } = userActions

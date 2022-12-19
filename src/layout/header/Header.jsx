@@ -22,7 +22,7 @@ export default function Header() {
             <LinkRouter to='/'  class="btn-header">HOME</LinkRouter>
             <LinkRouter to='/Store' class="btn-header">STORE </LinkRouter>
             <LinkRouter  to='' class="btn-header">LIBRARY </LinkRouter>
-            <LinkRouter to='' class="btn-header"> CART</LinkRouter>     
+            <LinkRouter to='/Cart' class="btn-header"> CART</LinkRouter>     
             {role==='admin' ?(  <LinkRouter to='/AddGame' class="btn-header"> ADD GAME </LinkRouter>)
               :(null)
             }     

@@ -25,7 +25,7 @@ export default function AddForm() {
             video:formRef.current.elements.video.value,
             date: formRef.current.elements.date.value ,
           buyed: [],
-          rate: formRef.current.elements.rate.value,
+          rate: [],
           category: [formRef.current.elements.category.value]
         }
         if(formRef.current.elements.category1.value !== '' ){
@@ -77,6 +77,7 @@ export default function AddForm() {
 
   return (
     <div className='form-container'>
+      <div className='content' >
     <form ref={formRef} className='form-template'>
         <h3> Create a new product</h3>
         <input type='text' name='name' placeholder='Game Name' required/>
@@ -85,12 +86,11 @@ export default function AddForm() {
         <input type='number' name='price' placeholder='Price'  required/>
         <input type='text' name='video' placeholder='Video' required/>
         <input type='date' name='date' placeholder='Date' required/>
-        <input type='number' name='rate' placeholder='Rate' min='0' max='5' step=".1" required/>
         <input type='text' name='category' placeholder='Category' required/>
         <input type='text' name='category1' placeholder='Category'/>
-        {/* <input type='text' name='category2' placeholder='Category'/> */}
         <button type='submit' onClick={handleSubmit} className='btn'> Create</button>
     </form>
+    </div>
     </div>
   )
 }

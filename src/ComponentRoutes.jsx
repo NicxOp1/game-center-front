@@ -5,7 +5,7 @@ import AddGame from "./Pages/AddGame";
 import Home from "./Pages/Home";
 import Profile from "./Components/Profile/Profile";
 import Store from "./Pages/Store/Store";
-import ProfileEdit from "./Components/Profile/ProfileEdit";
+import ProfileEdit from "./Components/Profile/ProfileEdit";;
 
 export default function ComponentRoutes() {
   return (

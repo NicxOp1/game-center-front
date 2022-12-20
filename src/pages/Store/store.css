@@ -55,9 +55,12 @@
 .content-checkbox-store{
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
-
+.check-label{
+    color: aliceblue;
+}
 
 
 

@@ -8,7 +8,7 @@ export default function Checkbox(props) {
   return (
       <div className="content-checbox">
   <label className="checkBox-label">
-    <input id="" type="checkbox"/>
+    <input id={category} type="checkbox"/>
     <div className="transition"></div>
   </label>{category}
 </div>

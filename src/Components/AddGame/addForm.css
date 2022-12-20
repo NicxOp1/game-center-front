@@ -15,9 +15,20 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px) sepia(.5); 
+  min-height: 65vh;
+	width: 100%;
+  flex-grow: 1;
+  gap: 1rem;
+  padding: 2rem 0;
+}
 .form-template{
-    margin-top: 9rem; 
-    margin-bottom: 3rem;
     padding: 1.5rem;
     width: 50%;
     height: 85vh;

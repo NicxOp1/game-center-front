@@ -1,12 +1,21 @@
 /* import React, { useState } from "react"; */
 import './cardGames.css'
-
+import cartActions from '../../Redux/Actions/cartActions'
+import { useDispatch } from 'react-redux'
 export default function CardGames(props) {
-
-    let {name,category,img,price} = props
+    const dispatch = useDispatch()
+    let {name,category,img,price,game} = props
 
 /*     const [hover,setHover] = useState(false) */
 
+const addToCart = (e) =>{
+    e.preventDefault()
+    game= {
+        ...game,
+        unity:1
+    }
+    dispatch(cartActions.addGame(game))
+}
   return (
     <div className='cont-card'>
         <div className='cont-card-1'>
@@ -20,7 +29,7 @@ export default function CardGames(props) {
                     <p className='text-category-card'>price {price} $</p>
                 </div>
                 <div>
-                    <button>ds</button>
+                    <button onClick={addToCart}>ds</button>
                 </div>
             </div>
         </div>

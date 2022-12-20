@@ -1,4 +1,6 @@
+import './bodyTabble.css'
 import React, { useEffect } from "react";
+
 import { useDispatch } from "react-redux";
 import cartActions from "../../Redux/Actions/cartActions";
 
@@ -25,9 +27,9 @@ export default function BodyTable(props) {
       <th>${game.price}</th>
       <th>
         {game.unity}
-        <button id={game.name} onClick={add}>Mas</button>
-        <button id={game.name} onClick={remove}>Menos</button>
-        <button id={game.name} onClick={deleteProduct}>Delete</button>
+        <button className="button" id={game.name} onClick={add}>+</button>
+        <button className="button" id={game.name} onClick={remove}>-</button>
+        <button className="button" id={game.name} onClick={deleteProduct}>X</button>
       </th>
       <th>{game.price * game.unity}USD</th>
     </tr>

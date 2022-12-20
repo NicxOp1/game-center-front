@@ -9,48 +9,50 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 export default function ProfileEdit() {
   const navigate = useNavigate();
-  const [user, setUser] = useState([]);
-  const name = useRef(null);
-  const lastName = useRef(null);
-  const photo = useRef(null);
-  const age = useRef(null);
-  const email = useRef(null);
-
+  const forName = useRef();
+  const forLastName = useRef();
+  const forPhoto = useRef();
+  const forAge = useRef();
+  const formRef = useRef();
   let token = useSelector((store) => store.userReducer);
-  useEffect(() => {
-    return async function fetchdata() {
-      await axios
-        .get(
-          `${BASE}/auth/me/${token.id}
-          `,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        )
-        .then((res) => {
-          let userdata = res.data.response;
-          setUser(userdata);
-        });
-    };
-  }, []);
-
+  console.log(token, "<==");
+  let { name, lastName, photo, age, email, password } = token;
+  // useEffect(() => {
+  //   return async function fetchdata() {
+  //     await axios
+  //       .get(
+  //         `${BASE}/auth/me${token.id}
+  //         `,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //           },
+  //         }
+  //       )
+  //       .then((res) => {
+  //         let userdata = res.data.response;
+  //         setUser(userdata);
+  //       });
+  //   };
+  // }, []);
   async function saveData(e) {
     e.preventDefault();
     const saveData = {
-      name: name.current.value,
-      lastName: lastName.current.value,
-      photo: photo.current.value,
-      age: age.current.value,
-      email: email.current.value,
+      name: forName.current.value,
+      lastName: forLastName.current.value,
+      photo: forPhoto.current.value,
+      age: forAge.current.value,
+      email: email,
     };
+    console.log(token.token);
     try {
-      let res = await axios.patch(`${BASE}/auth/me/${token.id}`, saveData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      let headers = { headers: { "Authorization": `Bearer ${token.token}` } };
+      let res = await axios.patch(
+        `${BASE}/auth/me/${token.id}`,
+        saveData,
+        headers
+      );
+      console.log(res, "<=========");
       if (res.data.success) {
         Swal.fire({
           icon: "success",
@@ -86,26 +88,30 @@ export default function ProfileEdit() {
             <input
               className="input-profile"
               type="text"
-              placeholder={`${token.name}`}
-              ref={name}
+              placeholder={name}
+              defaultValue={name}
+              ref={forName}
             />
             <input
               className="input-profile"
               type="text"
-              placeholder={`${token.lastName}`}
-              ref={lastName}
+              placeholder={lastName}
+              defaultValue={lastName}
+              ref={forLastName}
             />
             <input
               className="input-profile"
               type="text"
-              placeholder={`${token.photo}`}
-              ref={photo}
+              placeholder={photo}
+              defaultValue={photo}
+              ref={forPhoto}
             />
             <input
               className="input-profile"
-              type="text"
-              placeholder={`${token.email}`}
-              ref={email}
+              type="number"
+              placeholder={age}
+              defaultValue={age}
+              ref={forAge}
             />
           </form>
           <div className="content-button-profile">

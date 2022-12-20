@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 45vh;
+  min-height: 50vh;
   margin: 0.5rem;
   min-width: 40vw;
 }
@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 67vh;
   background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/506524b5fe295a46bca10adb/vcvv-min.jpg");
   background-repeat: no-repeat;
   background-size: cover;

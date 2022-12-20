@@ -48,20 +48,20 @@ export default function SeeProfile() {
           />
           <input
             class="input-profile"
+            type="number"
+            value={`${token.age}`}
+            disabled
+          />
+          <input
+            class="input-profile"
             type="text"
             value={`${token.photo}`}
             disabled
           />
           <input
             class="input-profile"
-            type="number"
-            value={`${token.role}`}
-            disabled
-          />
-          <input
-            class="input-profile"
             type="text"
-            value={`${token.email}`}
+            value={`${token.role}`}
             disabled
           />
         </form>

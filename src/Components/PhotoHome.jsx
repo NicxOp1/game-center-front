@@ -10,12 +10,9 @@ export default function PhotoHome(props) {
     <>
       <div className="imgDiv">
         <Fade>
-          <img src={photo} style={{height:220,width:280}} alt={name}></img>
-          
+          <img src={photo} style={{ height: 220, width: 280 }} alt={name}></img>
         </Fade>
-        
       </div>
-
     </>
   );
 }

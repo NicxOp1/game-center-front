@@ -5,25 +5,34 @@
 }
 footer {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top:1rem;
   background-color: #080312;
   color: white;
   min-height: 15vh;
 }
+footer:last-child{
+ align-items: center;
+}
 .title-footer {
-  font-size: 1.5rem;
-  margin: 0.5rem;
+ /*  border: 1px solid orange; */
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .github-footer {
+/*   border: 1px solid blue; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 .content-github {
+  /* border: 1px solid red; */
   display: flex;
-  margin: 0.2rem;
+
 }
 .ancor-github {
   margin: 0.2rem;
@@ -34,16 +43,51 @@ footer {
   margin: 0.5rem;
 }
 .text-footer:hover {
-  color: rgb(69, 7, 132);
-  font-weight: 700;
+  color: #afffff;
+/*   font-weight: 700; */
   text-decoration: underline;
 }
 .info {
+  border: 1px solid violet;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.content-aboutUs{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.content-all{
+  display: flex;
+  
+}
+.content-footer{
+  display: flex;
+/*   border: 1px solid red; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:flex-start;
+  height: 8rem;
+  width: auto;
+/*   padding: .5rem; */
+}
+.content-footer li {
+  list-style: none;
+  margin: .2rem;
+}
+.content-footer li a{
+  text-decoration: none;
+  color: white;
 
+  margin: .5rem;
+}
+.content-footer li a:hover{
+  text-decoration: underline;
+
+}
 @media screen and (max-width: 768px) {
   footer {
     flex-direction: column;

@@ -76,28 +76,51 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="github-footer">
-        <h3 className="title-footer">Linkedin</h3>
-        <div className="content-github">
-          <div className="ancor-github">
-            <p className="text-footer">Gabriel</p>
-            <p className="text-footer">Cesar</p>
-            <p className="text-footer">Laila</p>
-          </div>
-          <div className="ancor-github">
-            <p className="text-footer">German</p>
-            <p className="text-footer">Aldana</p>
-            <p className="text-footer">Nicolas</p>
-            <p className="text-footer">Ramiro</p>
-          </div>
+      <div className="content-aboutUs">
+        <h3 className="title-footer">Contact</h3>
+<div className="content-footer">
+        <li>
+          <a href="#">About us</a>
+        </li>
+        <li>
+          <a href="#">Have you any question?</a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
         </div>
       </div>
-      <div className="info">
+      <div className="content-aboutUs">
+        <h3 className="title-footer">Pages</h3>
+        <div className="content-all">
+        <div className="content-footer">
+        <li>
+          <a href="/Home">Home</a>
+        </li>
+        <li>
+          <a href="/Store">Store</a>
+        </li>
+        <li>
+          <a href="/SignInUp">Sign in & Sign up</a>
+        </li></div>
+        <div className="content-footer">
+        <li>
+          <a href="/Library">Library</a>
+        </li>
+        <li>
+          <a href="/Cart">Cart</a>
+        </li>
+        </div>
+        </div>
+      </div>
+{/*       <div className="info">
         <h3 className="title-footer">Methods of payment</h3>
+        <div className="content-github">
         <p className="text-footer">Debit</p>
         <p className="text-footer">Credit</p>
         <p className="text-footer">Transfer</p>
-      </div>
+        </div>
+      </div> */}
       <Arrow />
     </footer>
   );

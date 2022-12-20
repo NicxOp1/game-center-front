@@ -21,22 +21,20 @@ const filterGame = createAsyncThunk('filterGame',async(value)=>{
         }
     }
 })
-
-
-const filterSearch = createAsyncThunk('getfilterSearch', async(filter) => {
-    try {
-        let search = filter
-        const response = await axios.get(`http://localhost:8080/games/?name=${search}`)
-        return response.data.res
-    } catch (err) {
-        return {
+const filterGameInput = createAsyncThunk('filterGameInput',async({check,search})=>{
+    try{
+        const response = await axios.get(`http://localhost:8080/games?${check}${search}`)
+            return {game:response.data.res} 
+    }catch(err){
+        return{
             payload:"error"
         }
     }
 })
+
 const gameActions={
     getGame,
     filterGame,
-    filterSearch
+    filterGameInput
 }
 export default gameActions

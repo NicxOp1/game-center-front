@@ -35,7 +35,7 @@ const removeToCart = (e)=>{
                     <p className='text-category-card'>Price ${price}</p>
                 </div>
                 <div className='content-btn-card-store'>
-                {productOnCart.length > 0 ? <button onClick={removeToCart}>Remove</button> : <button onClick={addToCart}>Buy</button>}
+                {productOnCart.length > 0 ? <button className='remove-from-cart' onClick={removeToCart}>Remove</button> : <button className='add-to-cart' onClick={addToCart}>Buy</button>}
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ export default function CardGames(props) {
                 <div className='text-card-store'>
                     <h6>{name}</h6>
                     <p className='text-category-card'>{category}</p>
-                    <p className='text-category-card'>price {price} $</p>
+                    <p className='text-category-card'>Price ${price}</p>
                 </div>
                 <div className='content-btn-card-store'>
                 <button>Buy</button>

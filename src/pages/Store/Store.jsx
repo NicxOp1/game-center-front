@@ -10,6 +10,10 @@ import gameActions from '../../Redux/Actions/gamesActions'
 
 export default function Store() {
   let searchRef = useRef(null)
+  let categoryRef = useRef(null)
+  let priceRef = useRef(null)
+  const [value, setValue] = useState('')
+  const [category, setCategory] = useState([])
   const dispatch = useDispatch()
   let [checketGame, setChecketGame] = useState([])
   const {getGame,filterGameInput} = gameActions
@@ -17,22 +21,44 @@ export default function Store() {
 
 
 
-  console.table(checketGame);
 
   useEffect(() => {
     axios.get(`http://localhost:8080/games/`)
         .then(res => setChecketGame(res.data.res))
         .catch(err => console.log(err.message))
+    dispatch(getGame())
 }, [])
 
+  let valores = {} 
 
 
 
 
+  const selectEvent  = (e) => {
+    valores = {
+      category: "&category="+categoryRef.current.value,
+      value: "&name="+searchRef.current.value,
+      order: "&price="+priceRef.current.value
+    }
+    dispatch(filterGameInput(valores))
 
-  let check = Array.from(new Set(checketGame.map(e => e.category)))
 
-  console.log(check);
+  };
+
+/*   useEffect(()=>{
+    
+  },[value,valores.category])
+ */
+
+
+  let checkMap = []
+  let check = checketGame.map(e => e.category)
+  check.map (e => e.map(a => checkMap.push(a)))
+  let categori = Array.from(new Set(checkMap))
+
+
+
+
   return (
     <div className='content-store'>
       {/* <h1 className='title-store'>Store</h1> */}
@@ -41,25 +67,23 @@ export default function Store() {
       </div>
       <div className='content-cards2' style={{marginTop:"5rem"}}>
         <div>
-          {/* <input type="search" ref={searchRef} onChange={controlsearch } /> */}
+          <Search search={selectEvent} searchRef={searchRef}/>
         </div>
         <div className='content-checkbox-select'>
-          <select className='select-store'>
-            <option value="hide">sort by</option>
-            <option className='options-select-store'>higher price</option>
-            <option className='options-select-store'>lower price</option>
-          </select>
-          <select className='select-store'>
-            <option value="hide">sort by</option>
-            <option className='options-select-store'>higher price</option>
-            <option className='options-select-store'>lower price</option>
+          <select ref={priceRef} onChange={selectEvent} className='select-store'>
+            <option value="">sort by</option>
+            <option value="desc" className='options-select-store'>higher price</option>
+            <option value="asc" className='options-select-store'>lower price</option>
           </select>
           <div className='content-checkbox-store'>
+          <select className='select-store' ref={categoryRef} onChange={selectEvent}>
+            <option className='options-select-store' value="">sort by</option>
             {
-              check.map(e => 
-                <Checkbox category={e} />
+              categori.map(e => 
+                <option className='options-select-store' value={e}>{e}</option>
             )
             }
+          </select>
           </div>
         </div>
         <div className='cont-card'>

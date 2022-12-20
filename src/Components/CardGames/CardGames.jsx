@@ -14,9 +14,14 @@ export default function CardGames(props) {
                 <img className='img-card' src={img} alt="wow" />
             </div>
             <div className='title-card'>
-                <h6>{name}</h6>
-                <p className='text-category-card'>{category}</p>
-                <p className='text-category-card'>price {price} $</p>
+                <div>
+                    <h6>{name}</h6>
+                    <p className='text-category-card'>{category}</p>
+                    <p className='text-category-card'>price {price} $</p>
+                </div>
+                <div>
+                    <button>ds</button>
+                </div>
             </div>
         </div>
     </div>

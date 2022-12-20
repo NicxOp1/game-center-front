@@ -22,6 +22,7 @@ const gamesReducer = createReducer(initialState,(builder)=>{
         }
     })
     .addCase(filterGameInput.fulfilled, (state, action) => {
+        console.log(action.payload)
         return{ 
         ...state,
             ...action.payload

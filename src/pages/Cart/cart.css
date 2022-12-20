@@ -1,13 +1,13 @@
 .content-Cart{
 
     background: linear-gradient(#02070d,#032b4f);
-    min-height: 100vh;
+    min-height: 66.7vh;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
-    padding: 1rem;
-    padding-top: 12%;
+    /* padding: 1rem; */
+    padding-top: 5%;
 }
 .title{
     color: #00fffb;

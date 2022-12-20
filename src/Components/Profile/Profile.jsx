@@ -2,22 +2,26 @@ import React from "react";
 import "./profile.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { BASE } from "../../Api/url";
+import SeeProfile from "./SeeProfile";
 
-
-export default function Profile() {
-
+export default function Profile({ name, photo, age, email, role, id }) {
   const [user, setUser] = useState([]);
   let token = useSelector((store) => store.userReducer);
-
   useEffect(() => {
     return async function fetchdata() {
       await axios
-        .get(`http://localhost:8080/auth/me/${token.id}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
+        .get(
+          `${BASE}/auth/me/${token.id}
+          `,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
         .then((res) => {
           let userdata = res.data.response;
           setUser(userdata);
@@ -27,70 +31,31 @@ export default function Profile() {
 
   return (
     <>
-      <main className="body-content-profile">
-        <div class= "content-principate-profile">
-          <div className="config-profile">
-            <h1 className="title-profile">ACCOUNT SETTINGS</h1>
-            <h2 className="title-profile">Manage Your Account Data</h2>
-          </div>
-        </div>
-        <div className="content-profile">
-          <div className="content-input-profile">
-            <div className="content-text-profile">
-              <div className="content-img-profile">
-                <img
-                  className="img-profile"
-                  src= {`${token.photo}`}
-                  alt="photoUser"
-                />
+      <div class="body-content-profile">
+        <div className="content-profile-seeprofile">
+          <div className="profile-name">
+            <div className="content-img-profile">
+              <img
+                className="img-profile"
+                src={`${token.photo}`}
+                alt={`${token.name}`}
+              />
+            </div>
+            <div className="content-info-profile">
+              <h5 className="text-profile-edit">{`${token.name}`}</h5>
+              <div className="content-link-profile">
+                <button class="btn-profile">
+                  <NavLink to={"/Profile"}> Profile </NavLink>
+                </button>
+                <button class="btn-profile">
+                  <NavLink to={"/ProfileEdit"}> Edit </NavLink>
+                </button>
               </div>
-              <h3 className="title-profile">Your Profile</h3>
-              <button data-text="Awesome" class="button">
-                <span class="actual-text">&nbsp;Edit&nbsp;</span>
-                <span class="hover-text" aria-hidden="true">
-                  &nbsp;Edit&nbsp;
-                </span>
-              </button>
-            </div>
-            <div className="content-label">
-              <input
-                className="input-profile"
-                type="text"
-                value={`${token.name}`}
-                disabled
-              />
-
-              <input
-                className="input-profile"
-                type="text"
-                value={`${token.role}`}
-                disabled
-              />
-
-              <input
-                className="input-profile"
-                type="text"
-                value={`${token.email}`}
-                disabled
-              />
-
-              <input
-                className="input-profile"
-                type="text"
-                value="**********"
-                disabled
-                placeholder=""
-              />
-
-              <input
-                className="input-profile"
-                type="text"
-                value={`${token.photo}`}
-              />
             </div>
           </div>
+          <SeeProfile />
         </div>
-      </main>
+      </div>
     </>
   );
 }

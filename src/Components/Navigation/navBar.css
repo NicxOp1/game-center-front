@@ -1,0 +1,21 @@
+.content-buttom-ancor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.content-buttom-ancor a{
+    text-decoration: none;
+  }
+  .content-buttom-ancor a:hover  {
+    color: white;
+  }
+  
+
+
+@media (max-width:769px){
+    .content-buttom-ancor{
+        display: none;
+    }
+}

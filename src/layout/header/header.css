@@ -2,190 +2,57 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-}
-
-.image-logo {
-  height: 9rem;
-  width: 20%;
-}
-/* <-------- nav --------> */
-.content-buttom-ancor {
-  display: flex;
-  width: auto;
-  /* position: absolute; */
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap:1.5rem;
-  flex-grow: 1;
 
 }
+
+.content-nav img{
+  width: 15%;
+}
+
 .content-nav {
-  padding-top: -3rem;
-  position: absolute;
   width: 100%;
-  z-index: 30;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  height: 0rem!important;
-  min-height: 0vh;
+  min-height: 10vh;
   background-color: #080312;
+  padding: 0.5rem;
+  padding-right: 1rem;
  
 }
 
-/* .nav-left {
- padding-left: 20rem;
- display: flex;
- justify-content: end;
- align-items: center;
- padding-right: 1rem;
- gap: 1.5rem;
-} */
-
-.content-nav a, .nav-left a  {
-  text-decoration: none;
-  color: #00fffb;
-
-}
-.content-nav a:hover, .nav-left a:hover  {
-  color: white;
-}
-/* <-------- button --------> */
-.btn-header {
-
-  --border-color: linear-gradient(-45deg, #7e03aa, #00fffb);
-  --border-width: 0.125em;
-  --curve-size: 0.5em;
-  --blur: 30px;
-  --bg: #080312;
-  --color: #afffff;
-  color: var(--color);
-  position: relative;
-  /* isolation: isolate;
-  display: inline-grid; */
-  /* place-content: center; */
-  padding: 0.5em 1.5em;
-  font-size: 17px;
-  border: 0;
-  text-transform: uppercase;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
-  clip-path: polygon(
-    0% var(--curve-size),
-    var(--curve-size) 0,
-    100% 0,
-    100% calc(100% - var(--curve-size)),
-    calc(100% - var(--curve-size)) 100%,
-    0 100%
-  );
-  transition: color 250ms;
-}
-
-.btn-header::after,
-.btn-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.btn-header::before {
-  background: var(--border-color);
-  background-size: 300% 300%;
-  animation: move-bg7234 5s ease infinite;
-  z-index: -2;
-}
-
-@keyframes move-bg7234 {
-  0% {
-    background-position: 31% 0%;
-  }
-
-  50% {
-    background-position: 70% 100%;
-  }
-
-  100% {
-    background-position: 31% 0%;
-  }
-}
-
-.btn-header::after {
-  background: var(--bg);
-  z-index: -1;
-  clip-path: polygon(
-    var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
-    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width)),
-    var(--border-width) calc(100% - var(--border-width))
-  );
-  transition: clip-path 500ms;
-}
-
-.btn-header:where(:hover, :focus)::after {
-  clip-path: polygon(
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width)),
-    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width))
-  );
-  transition: 200ms;
-}
-
-.btn-header:where(:hover, :focus) {
-  color: #fff;
-}
 
 /* <-------- media quary --------> */
 @media( min-width: 2000px){
   .content-nav{
-    height: 10vh;
+    min-height: 10vh;
   }
-  .content-buttom-ancor{
-    justify-content: space-evenly;
-   
-  }
-  .content-nav a, .nav-left a,  .content-nav button{
-     font-size: 1.5rem; 
-  }
-  
-  .nav-left{
-    padding-left: 0;
-   }
+
    
   
 }
 @media (max-width: 1338px){
-  .nav-left{
-   padding-left: 0;
-  }
+.content-nav img{
+  width: 20%;
+}
   
  }
 @media (max-width: 1177px){
-  /* .image-logo {
-    width: 15rem;
-  } */
+
   .content-nav {
     padding-bottom: 1rem;
   }
-  .content-buttom-ancor{
-    justify-content: center;
-  }
+
 }
 @media screen and (max-width: 768px) {
-  .content-nav {
-    justify-content: center;
-  }
+.content-nav img{
+  width: 35%;
 
+}
+.content-nav{
+  flex-direction: column;
+  
+}
 }
 

@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as LinkRouter } from "react-router-dom";
 import "boxicons";
-
 import "./home.css";
+
+import {Swiper,SwiperSlide} from "swiper/react";
+import 'swiper/css'
 import 'swiper/less';
 import 'swiper/less/navigation';
 import 'swiper/less/pagination';
-import FotoHome from "../Components/PhotoHome";
 import gamesActions from "../Redux/Actions/gamesActions";
-import {Swiper,SwiperSlide} from "swiper/react";
-import 'swiper/css'
+import FotoHome from "../Components/PhotoHome";
 import logoTitle from'../data/logoTitle.png'
 import { height } from "dom7";
 import DescriptionHome from "../Components/DescriptionHome";
@@ -50,7 +50,7 @@ export default function Home() {
         <div className="titleHome">
           <img src={logoTitle} alt="logo" />
           <h1>Are you ready to play?</h1>
-          <LinkRouter to='' style={{marginTop:"3rem",textDecoration:"none"}} class="btn-header">Go to store </LinkRouter>
+          <LinkRouter to='/Store' style={{marginTop:"3rem",textDecoration:"none"}} class="btn-header">Go to store </LinkRouter>
         </div>
         <h2 style={{color:"white"}}>MOST PLAYED GAMES</h2>
         <div className="photoContainerHome">

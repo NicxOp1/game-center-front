@@ -1,22 +1,39 @@
-import {addListener, createAction} from '@reduxjs/toolkit'
-import { dataset } from 'dom7'
+import {createAction} from '@reduxjs/toolkit'
 
-const getCart = createAction('getCart',(game)=>{
-    a
-    datasetda
-    d
-    addListenerasd
 
-    addListenerasda
+const addGame = createAction('addGame',(game)=>{
+    return {
+        payload: game
+    }
 
-    addListener
-    dataset
+})
+
+const remove = createAction('removeGame',(game)=>{
+    
+    return{
+        payload:game
+    }
+})
+const plus = createAction('plusGame',(game)=>{
+    console.log(game);
+    return {
+        payload:game
+    }
+})
+const deleteProduct = createAction('deleteGame',(game)=>{
+    return {
+        payload:game
+    }
 })
 
 
 
 const cartActions = {
-    getCart
+    addGame,
+    remove,
+    plus,
+    deleteProduct
+
 }
 
 

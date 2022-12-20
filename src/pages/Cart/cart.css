@@ -7,6 +7,10 @@
     gap: 2.5rem;
     align-items: center;
     padding: 1rem;
+    padding-top: 12%;
+}
+.title{
+    color: #00fffb;
 }
 
 

@@ -17,10 +17,12 @@ const cartReducer = createReducer(initialState,(builder) =>{
         .addCase(addGame,(state,action)=>{
 
             let newProduct = state.products.concat(action.payload)
+            let sortedProducts = newProduct.sort(
+                (p1, p2) => (p1.name < p2.name) ? 1 : (p1.name > p2.name) ? -1 : 0)
 
             return {
                 ...state,
-                products: newProduct
+                products: sortedProducts
             }
         })
         .addCase(plus,(state,action)=>{
@@ -34,10 +36,12 @@ const cartReducer = createReducer(initialState,(builder) =>{
                 }
 
                 arrayState = arrayState.concat(arrayProducts[0])
+                let sortedProducts = arrayState.sort(
+                    (p1, p2) => (p1.name < p2.name) ? 1 : (p1.name > p2.name) ? -1 : 0)
 
                 return{
                     ...state,
-                    products:arrayState
+                    products:sortedProducts
                 }
             }else{
                 console.log("no anda");
@@ -60,10 +64,12 @@ const cartReducer = createReducer(initialState,(builder) =>{
                     }
                 }
                 arrayState = arrayState.concat(arrayProducts[0])
+                let sortedProducts = arrayState.sort(
+                    (p1, p2) => (p1.name < p2.name) ? 1 : (p1.name > p2.name) ? -1 : 0)
 
                 return{
                     ...state,
-                    products:arrayState
+                    products:sortedProducts
                 }
             }else{
                 console.log("no anda");

@@ -15,7 +15,6 @@ const remove = createAction('removeGame',(game)=>{
     }
 })
 const plus = createAction('plusGame',(game)=>{
-    console.log(game);
     return {
         payload:game
     }

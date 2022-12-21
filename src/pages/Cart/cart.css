@@ -14,9 +14,12 @@
 }
 
 
-.table{
-    color: #00fffb;
+.table{    
     padding: 5rem;
     width: 80%;
+    text-align: center;
+    border: 5px solid #00fffb;
 }
-
+.tableHeader{
+    color: #00fffb;
+}

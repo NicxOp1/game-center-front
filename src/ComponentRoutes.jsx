@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import SignInUp from "./Pages/SignInUp";
 import AddGame from "./Pages/AddGame";
 import Home from "./Pages/Home";
+import Cart from "./Pages/Cart/Cart";
 import Profile from "./Components/Profile/Profile";
 import Store from "./Pages/Store/Store";
 import NotFoundPage from "./Pages/NotFound";
@@ -16,6 +17,8 @@ export default function ComponentRoutes() {
       <Route path="/*" element={<NotFoundPage />} />
       <Route path="/SignInUp" element={<SignInUp />} />
       <Route path="/AddGame" element={<AddGame />} />
+      <Route path="/Cart" element={<Cart />} />
+
       <Route path="/Profile" element={<Profile />} />
       <Route path="/ProfileEdit" element={<ProfileEdit />} />
       <Route path="/Store" element={<Store />} />

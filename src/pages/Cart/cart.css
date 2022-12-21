@@ -1,0 +1,25 @@
+.content-Cart{
+
+    background: linear-gradient(#02070d,#032b4f);
+    min-height: 66.7vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    /* padding: 1rem; */
+    padding-top: 5%;
+}
+.title{
+    color: #00fffb;
+}
+
+
+.table{    
+    padding: 5rem;
+    width: 80%;
+    text-align: center;
+    border: 5px solid #00fffb;
+}
+.tableHeader{
+    color: #00fffb;
+}

@@ -1,12 +1,27 @@
 /* import React, { useState } from "react"; */
 import './cardGames.css'
-
+import cartActions from '../../Redux/Actions/cartActions'
+import { useDispatch, useSelector } from 'react-redux'
 export default function CardGames(props) {
-
-    let {name,category,img,price} = props
+    const dispatch = useDispatch()
+    let {name,category,img,price,game} = props
 
 /*     const [hover,setHover] = useState(false) */
+    let products = useSelector(store=> store.cartReducer.products)
+    let productOnCart = products.filter(e => e._id === game._id)
+const addToCart = (e) =>{
+    e.preventDefault()
+    game= {
+        ...game,
+        unity:1
+    }
+    dispatch(cartActions.addGame(game))
+}
 
+const removeToCart = (e)=>{
+    e.preventDefault()
+    dispatch(cartActions.deleteProduct(game))
+}
   return (
     <div className='cont-card-store'>
         <div className='cont-card-1'>
@@ -20,7 +35,7 @@ export default function CardGames(props) {
                     <p className='text-category-card'>Price ${price}</p>
                 </div>
                 <div className='content-btn-card-store'>
-                <button>Buy</button>
+                {productOnCart.length > 0 ? <button className='remove-from-cart' onClick={removeToCart}>Remove</button> : <button className='add-to-cart' onClick={addToCart}>Buy</button>}
                 </div>
             </div>
         </div>

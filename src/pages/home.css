@@ -7,14 +7,14 @@ h1,h3,h2,h4{
   font-weight: bold;
 }
 .divHome1{
-  height: 120vh;
+/*   height: 140vh; */
   display: flex;
   align-items: center;
   flex-direction: column;
   background-image: url('../data/Rectangle19.png') ;
   background-repeat: no-repeat;
   background-size: cover;
-  gap:-1rem;
+  /* gap:-1rem; */
   width: 100%;
 /*   justify-content: space-evenly; */
 }
@@ -32,7 +32,7 @@ h1,h3,h2,h4{
 }
 .titleHome img{
 height: 25rem;
-width: 60%;
+width: 50rem;
 }
 .titleHome h1{
   color: white;
@@ -41,7 +41,6 @@ width: 60%;
 }
 .divHome1 h2{
   display: flex;
-  margin-left: -53rem;
   justify-content: flex-end;
   align-items: flex-end;
   z-index: 10;
@@ -57,10 +56,10 @@ width: 60%;
 .photoContainerHome{
 
   display: flex;
-
-  justify-content: center;
-  align-items: center;
-  height: 15rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items:flex-end;
+  height: 20rem;
   margin-bottom: 10rem;
   width: 100%;
   
@@ -83,21 +82,23 @@ width: 60%;
 }
 .imgDiv{
 /*   position: relative; */
-  box-shadow:
+/*   box-shadow:
        inset 0 -3em 3em rgba(0,0,0,0.1),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter:blur(3rem);
+             0.3em 0.3em 1em rgba(0,0,0,0.3); */
+ /*  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter:blur(3rem); */
   display: flex;
   border-radius: 1rem;
-  height: 70%;
-  width: 100%;
+  height: auto;
+  width: auto;
   justify-content: center;
 /*   padding: 1rem; */
   align-items: center;
 z-index: 15;
 }
 .imgDiv img{
+  height: 100%;
+  width: 100%;
   object-fit: contain;
   border-radius: 1rem;
   padding: 0rem;
@@ -190,4 +191,79 @@ z-index: 15;
   /* backdrop-filter:blur(5px); */
  /*  margin: auto; */
 }
+@media  screen and (max-width:1000px)  {
+  .divHome1{
+    gap: 1rem;
+  }
+ /*  .photoContainerHome{
+  
+  
+  } */
+  .containerPhoto figure{
+    position: relative;
+    height: 150px;
+    width:230px;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 15px 25px rgba(0, 0,0,0.50);
+    cursor: pointer;
+  }
+}
+@media  screen and (max-width:767px)  {
+  .titleHome img{
+    height: 25rem;
+    width: 40rem;
+    }
+}
+@media  screen and (max-width:650px)  {
+  .titleHome{
+    gap: 3rem;
+  }
+  .photoContainerHome{
+    margin-bottom: 11rem!important;
+  }
+  .titleHome h1 {
+/*     font-size: 1.25rem; */
+font-size: 1.25rem;
+  }
+  .titleHome img{
+    height: 15rem!important;
+    width: 30rem!important;
+    }
+}
+@media  screen and (max-width:600px)  {
+  .titleHome img{
+    height: 20rem!important;
+    width: 28rem!important;
+    }
+    .titleHome{
+      justify-content: space-between;
+    }
+}
+@media screen and (max-width:459px) {
+  .divHome1{
+    height: 272vh!important;
+  }
+  .titleHome img{
+    height: 16rem!important;
+    width: 26rem!important;
+    }
+}
+@media  screen and (max-width:425)  {
+  .titleHome img{
+    height: 8rem!important;
+    width: 10rem!important;
+    }
+    
+    .photoContainerHome{
 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items:center;
+      height: auto;
+
+      width: 100%;
+      
+    }
+}

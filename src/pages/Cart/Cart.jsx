@@ -24,9 +24,10 @@ export default function Cart() {
               <th>Price</th>
               {/* <th>Amount</th> */}
               <th className="subTotal">Sub Total</th>
+              <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tableBody">
             {products.map((e, i) => (
               <BodyTable game={e} key={i} />
             ))}

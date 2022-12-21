@@ -3,11 +3,7 @@ import cartActions from '../Actions/cartActions';
 
 const {addGame,plus,remove,deleteProduct} = cartActions
 const initialState = {
-    products: [{
-        name: "God of War",
-        price: 35,
-        unity: 3,
-    }],
+    products: [],
     newProducts: []
 };
 

@@ -25,8 +25,7 @@ h1,h3,h2,h4{
   flex-direction:column ;
   align-items: center;
   position: absolute;
-  
-  height:24rem!important;
+  height:19rem!important;
   width: 100%;
   backdrop-filter: blur(3px);
 }
@@ -54,15 +53,12 @@ width: 50rem;
   padding: 2rem;
 }
 .photoContainerHome{
-
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items:flex-end;
+  justify-content: center;
   height: 20rem;
-  margin-bottom: 10rem;
+  margin-bottom: 14rem;
   width: 100%;
-  
 }
 .css-1gzxeik{
   display:flex;
@@ -123,7 +119,7 @@ z-index: 15;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 115%;
 
 }
 .containerPhoto figure{
@@ -195,10 +191,6 @@ z-index: 15;
   .divHome1{
     gap: 1rem;
   }
- /*  .photoContainerHome{
-  
-  
-  } */
   .containerPhoto figure{
     position: relative;
     height: 150px;
@@ -207,6 +199,9 @@ z-index: 15;
     border-radius: 1rem;
     box-shadow: 0px 15px 25px rgba(0, 0,0,0.50);
     cursor: pointer;
+  }
+  .photoContainerHome{
+    gap: 1rem;
   }
 }
 @media  screen and (max-width:767px)  {
@@ -239,14 +234,21 @@ font-size: 1.25rem;
     .titleHome{
       justify-content: space-between;
     }
+    .photoContainerHome{
+      gap: 1rem;
+      margin-bottom: 4.75rem!important;
+    }
 }
-@media screen and (max-width:459px) {
+@media screen and (max-width:475px) {
   .divHome1{
     height: 272vh!important;
   }
   .titleHome img{
-    height: 16rem!important;
-    width: 26rem!important;
+    height: 14rem!important;
+    width: 24rem!important;
+    }
+    .photoContainerHome{
+      gap: 3rem;
     }
 }
 @media  screen and (max-width:425)  {
@@ -254,6 +256,7 @@ font-size: 1.25rem;
     height: 8rem!important;
     width: 10rem!important;
     }
+    
     
     .photoContainerHome{
 

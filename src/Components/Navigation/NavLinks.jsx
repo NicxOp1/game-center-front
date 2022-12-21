@@ -12,7 +12,7 @@ export default function NavLinks() {
      <LinkRouter to='/'  className="btn-header">HOME</LinkRouter>
             <LinkRouter to='/Store' className="btn-header">STORE </LinkRouter>
             <LinkRouter  to='' className="btn-header">LIBRARY </LinkRouter>
-            <LinkRouter to='' className="btn-header"> CART</LinkRouter>     
+            <LinkRouter to='/Cart' className="btn-header"> CART</LinkRouter>     
             {role==='admin' ?(  <LinkRouter to='/AddGame' className="btn-header"> ADD GAME </LinkRouter>)
               :(null)
             }     

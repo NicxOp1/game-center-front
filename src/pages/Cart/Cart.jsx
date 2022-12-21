@@ -2,6 +2,7 @@ import React from "react";
 import "./cart.css";
 import { useSelector } from "react-redux";
 import BodyTable from "../../Components/BodyTable/BodyTable";
+import e from "express";
 
 export default function Cart() {
   let { products } = useSelector((store) => store.cartReducer);
@@ -9,7 +10,9 @@ export default function Cart() {
   if (products.length !== 0) {
     products.map((e) => (total = total + e.price * e.unity));
   }
-
+  const finish =(e) =>{
+    e.preventDefault()
+  }
   return (
     <div className="content-Cart">
       <h1 className="title">Cart</h1>
@@ -38,7 +41,7 @@ export default function Cart() {
               <th>Total</th>
               <th>${total}</th>
               <th>
-                <button className="button">Finish</button>
+                <button onClick={finish()} className="button">Finish</button>
               </th>
             </tr>
           </tfoot>

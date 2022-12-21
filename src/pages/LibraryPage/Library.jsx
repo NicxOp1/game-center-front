@@ -27,7 +27,7 @@ export default function Library() {
             </div>
           </div>
         </div>
-
+        {/* arreglar logica */}
         <div className="content-btn-cards-library">
           <div className="content-myfavority-library">
             <div className="title-library-one">

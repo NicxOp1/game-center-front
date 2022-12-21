@@ -3,10 +3,11 @@ import axios from "axios";
 import { BASE } from "../../Api/url";
 
 const SignIn = createAsyncThunk("SignIn", async (form) => {
+  console.log(form);
   try {
     let res = await axios.post(`${BASE}/auth/signin`, form);
     let user = res.data.response;
-
+console.log(res);
     if (res.data.success) {
       return {
         success: true,
@@ -56,7 +57,7 @@ const logWithToken = createAsyncThunk("logWithToken", async (token) => {
       null,
       headers
     );
-    console.log(token)
+   
     return {
       success: true,
       user: user.data.response.user,

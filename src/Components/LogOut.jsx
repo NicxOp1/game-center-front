@@ -10,6 +10,7 @@ export default function LogOut({ props }) {
   //  console.log(token)
   let dispatch = useDispatch();
   const navigate = useNavigate();
+  console.log(props);
 
   function signOut() {
     Swal.fire({
@@ -34,8 +35,8 @@ export default function LogOut({ props }) {
   }
 
   return (
-    <button onClick={() => signOut()} className={props}>
-      LogOut{" "}
-    </button>
+    <div onClick={() => signOut()} className={props}>
+      LogOut
+    </div>
   );
 }

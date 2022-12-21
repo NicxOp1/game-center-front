@@ -86,7 +86,7 @@ export default function Store() {
           </select>
           </div>
         </div>
-        <div className='cont-card'>
+        <div className='cont-card-store'>
         {
             game.map(e => <CardGames name={e.name} category={e.category} img={e.photo} price={e.price}>
             </CardGames>)

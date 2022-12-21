@@ -78,7 +78,7 @@ const userReducer = createReducer(InitialState, (builder) => {
           role: user.role,
           success: true,
         };
-        console.log(newState);
+       
         return newState;
       } else {
         let newState = {

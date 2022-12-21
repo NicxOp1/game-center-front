@@ -4,11 +4,11 @@ import cartActions from "../../Redux/Actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 export default function CardGames(props) {
   const dispatch = useDispatch();
-  let { name, category, img, price, game } = props;
+  let { name, category, img, price, game,id } = props;
 
   /*     const [hover,setHover] = useState(false) */
   let products = useSelector((store) => store.cartReducer.products);
-  let productOnCart = products.filter((e) => e._id === game._id);
+  let productOnCart = products.filter((e) => e._id === id._id);
   const addToCart = (e) => {
     e.preventDefault();
     game = {

@@ -92,7 +92,7 @@ console.log(answer.payload)
       catch(error){
         Swal.fire({
           icon: 'error',
-          title: 'Error, the user email, it´s already exist',
+          title: "Error, the user email, it's already exist",
           text: 'Try again with a new email.',
         })     
       }

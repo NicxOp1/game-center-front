@@ -54,6 +54,7 @@ export default function Home() {
         </div>
         <h2 style={{color:"white"}}>MOST PLAYED GAMES</h2>
         <div className="photoContainerHome">
+         
           {bestGame.map((e) => (
           <>
 {/*             <FotoHome photo={e.photo} name={e.name} > */}

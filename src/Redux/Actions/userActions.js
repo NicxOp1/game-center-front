@@ -56,7 +56,7 @@ const logWithToken = createAsyncThunk("logWithToken", async (token) => {
       null,
       headers
     );
-
+    console.log(token)
     return {
       success: true,
       user: user.data.response.user,

@@ -64,7 +64,7 @@ console.log(answer.payload)
     password:formRef.current.elements.password.value,
   }
  
-   await axios.post(`${BASE}/auth/`, form)
+   await axios.post(`${BASE}/auth/signin`, form)
    .then((res=>{
  
       try{

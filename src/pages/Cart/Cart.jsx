@@ -40,7 +40,7 @@ export default function Cart() {
               <th>Total</th>
               <th>${total}</th>
               <th>
-                <button onClick={finish()} className="button">Finish</button>
+                <button onClick={finish} className="button">Finish</button>
               </th>
             </tr>
           </tfoot>

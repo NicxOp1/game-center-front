@@ -22,6 +22,7 @@ export default function Library() {
                   category={e.category}
                   img={e.photo}
                   price={e.price}
+                  id={e._id}
                 />
               ))}
             </div>

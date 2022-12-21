@@ -2,7 +2,6 @@ import React from "react";
 import "./cart.css";
 import { useSelector } from "react-redux";
 import BodyTable from "../../Components/BodyTable/BodyTable";
-import e from "express";
 
 export default function Cart() {
   let { products } = useSelector((store) => store.cartReducer);

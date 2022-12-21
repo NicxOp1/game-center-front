@@ -13,46 +13,31 @@ export default function NavLinks() {
         HOME
       </LinkRouter>
       <LinkRouter to="/Store" className="btn-header">
-        STORE{" "}
+        STORE
       </LinkRouter>
       <LinkRouter to="/Library" className="btn-header">
-        LIBRARY{" "}
+        LIBRARY
       </LinkRouter>
-      <LinkRouter to="" className="btn-header">
-        {" "}
+      <LinkRouter to="/Cart" className="btn-header">
         CART
       </LinkRouter>
       {role === "admin" ? (
         <LinkRouter to="/AddGame" className="btn-header">
-          {" "}
-          ADD GAME{" "}
+          ADD GAME
         </LinkRouter>
       ) : null}
-      
-     <LinkRouter to='/'  className="btn-header">HOME</LinkRouter>
-            <LinkRouter to='/Store' className="btn-header">STORE </LinkRouter>
-            <LinkRouter  to='' className="btn-header">LIBRARY </LinkRouter>
-            <LinkRouter to='/Cart' className="btn-header"> CART</LinkRouter>     
-            {role==='admin' ?(  <LinkRouter to='/AddGame' className="btn-header"> ADD GAME </LinkRouter>)
-              :(null)
-            }     
-          
-      
-
 
       {logged ? (
         <>
           <LinkRouter to="/Profile" className="btn-header">
-            {" "}
-            PROFILE{" "}
+            PROFILE
           </LinkRouter>
 
           <LogOut props="btn-header" />
         </>
       ) : (
         <LinkRouter to="/SignInUp" className="btn-header">
-          {" "}
-          JOIN{" "}
+          JOIN
         </LinkRouter>
       )}
     </>

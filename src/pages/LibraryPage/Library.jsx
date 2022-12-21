@@ -11,11 +11,11 @@ export default function Library() {
           <h1 className="first-title-library">Library of your Games</h1>
         </div>
         <div className="content-btn-cards-library">
-          <div className="content-myfavority">
-            <div className="title-library">
+          <div className="content-myfavority-library">
+            <div className="title-library-one">
               <h3 title-library-card>My Favoritys</h3>
             </div>
-            <div className="cont-card-library">
+            <div className="cont-card-library-one">
               {games.map((e) => (
                 <CardGames
                   name={e.name}
@@ -29,11 +29,11 @@ export default function Library() {
         </div>
 
         <div className="content-btn-cards-library">
-          <div className="content-myfavority">
-            <div className="title-library">
+          <div className="content-myfavority-library">
+            <div className="title-library-one">
               <h3 title-library-card>My Games</h3>
             </div>
-            <div className="cont-card-library">
+            <div className="cont-card-library-one">
               {games.map((e) => (
                 <CardGames
                   name={e.name}

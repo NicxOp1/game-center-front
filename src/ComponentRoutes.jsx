@@ -9,12 +9,11 @@ import NotFoundPage from "./Pages/NotFound";
 import ProfileEdit from "./Components/Profile/ProfileEdit";
 import Library from "./Pages/LibraryPage/Library";
 
-
 export default function ComponentRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/*" element={<NotFoundPage/>}/>
+      <Route path="/*" element={<NotFoundPage />} />
       <Route path="/SignInUp" element={<SignInUp />} />
       <Route path="/AddGame" element={<AddGame />} />
       <Route path="/Profile" element={<Profile />} />

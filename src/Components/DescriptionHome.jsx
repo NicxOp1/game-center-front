@@ -9,7 +9,7 @@ export default function DescriptionHome(props) {
 <Fade >
     <div className='containerPhoto'>
       <figure>
-      <img src={photo} alt={name} style={{height:220,width:330}}  />
+      <img src={photo} alt={name}  />
       <div className="capa">
         <h3>{name}</h3>
         <p><box-icon name='star' type='solid' flip='horizontal' animation='tada' ></box-icon>{rate}</p>

@@ -7,7 +7,7 @@ export default function CardGames(props) {
   const dispatch = useDispatch();
   let { name, category, img, price, game,id } = props;
 
-  /*     const [hover,setHover] = useState(false) */
+      /* const [hover,setHover] = useState(false) */
   let products = useSelector((store) => store.cartReducer.products);
   let productOnCart = products.filter((e) => e._id === game._id);
   const addToCart = (e) => {
@@ -39,7 +39,7 @@ export default function CardGames(props) {
               <p className="text-category-card">{category[1]}</p>
               <p className="text-category-card">{category[0]}</p>
             </div>
-            <p className="text-category-card">Price ${price}</p>
+            <p className="text-category-card">Price $ {price}</p>
           </div>
           <div className="content-btn-card-store">
             {productOnCart.length > 0 ? (

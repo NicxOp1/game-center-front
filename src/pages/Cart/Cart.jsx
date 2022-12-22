@@ -3,17 +3,23 @@ import "./cart.css";
 import { useSelector } from "react-redux";
 import BodyTable from "../../Components/BodyTable/BodyTable";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 
 export default function Cart() {
   let { products } = useSelector((store) => store.cartReducer);
+  let user = useSelector(store => store.userReducer)
+  console.log(user);
   let total = 0;
   if (products.length !== 0) {
     products.map((e) => (total = total + e.price * e.unity));
   }
   const finish =(e) =>{
     e.preventDefault()
-    axios.post("http://localhost:8080/payment/",products)
+
+    let order ={
+      products:products,
+      user: user.id
+    }
+    axios.post("http://localhost:8080/payment/",order)
     .then(res =>{
       window.location.replace(res.data.init_point)
     })

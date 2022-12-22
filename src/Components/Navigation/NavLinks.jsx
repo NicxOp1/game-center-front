@@ -15,24 +15,24 @@ export default function NavLinks() {
       <LinkRouter to="/Store" className="btn-header">
         STORE
       </LinkRouter>
-      <LinkRouter to="/Library" className="btn-header">
-        LIBRARY
-      </LinkRouter>
-      <LinkRouter to="/Cart" className="btn-header">
-        CART
-      </LinkRouter>
-      {role === "admin" ? (
-        <LinkRouter to="/AddGame" className="btn-header">
-          ADD GAME
-        </LinkRouter>
-      ) : null}
 
       {logged ? (
         <>
+         
+          <LinkRouter to="/Library" className="btn-header">
+            LIBRARY
+          </LinkRouter>
+          <LinkRouter to="/Cart" className="btn-header">
+            CART
+          </LinkRouter> 
           <LinkRouter to="/Profile" className="btn-header">
             PROFILE
           </LinkRouter>
-
+          {role === "admin" ? (
+            <LinkRouter to="/AddGame" className="btn-header">
+              ADD GAME
+            </LinkRouter>
+          ) : null}
           <LogOut props="btn-header" />
         </>
       ) : (

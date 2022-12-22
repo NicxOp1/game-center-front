@@ -9,7 +9,7 @@ export default function CardGames(props) {
 
       /* const [hover,setHover] = useState(false) */
   let products = useSelector((store) => store.cartReducer.products);
-  let productOnCart = products.filter((e) => e._id === id._id);
+  let productOnCart = products.filter((e) => e._id === game._id);
   const addToCart = (e) => {
     e.preventDefault();
     game = {

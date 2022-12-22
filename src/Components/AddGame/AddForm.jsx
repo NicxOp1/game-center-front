@@ -22,8 +22,8 @@ export default function AddForm() {
           description: formRef.current.elements.description.value,
           photo: [formRef.current.elements.photo.value],
           price: formRef.current.elements.price.value,
-            video:formRef.current.elements.video.value,
-            date: formRef.current.elements.date.value ,
+          video:formRef.current.elements.video.value,
+          date: formRef.current.elements.date.value ,
           buyed: [],
           rate: [],
           category: [formRef.current.elements.category.value]

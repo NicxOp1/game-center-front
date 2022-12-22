@@ -57,19 +57,19 @@ export default function Store() {
     <div className='content-store'>
       <div className='content-CardDitails'>
       </div>
-      <div className='content-cards2' style={{marginTop:"5rem"}}>
+      <div className='content-cards2'>
         <div>
           <Search search={selectEvent} searchRef={searchRef}/>
         </div>
         <div className='content-checkbox-select'>
           <select ref={priceRef} onChange={selectEvent} className='select-store'>
-            <option value="">sort by</option>
+            <option value="">sort by Price</option>
             <option value="desc" className='options-select-store'>higher price</option>
             <option value="asc" className='options-select-store'>lower price</option>
           </select>
           <div className='content-checkbox-store'>
           <select className='select-store' ref={categoryRef} onChange={selectEvent}>
-            <option className='options-select-store' value="">sort by</option>
+            <option className='options-select-store' value="">sort by Category</option>
             {
               categori.map(e => 
                 <option className='options-select-store' value={e}>{e}</option>

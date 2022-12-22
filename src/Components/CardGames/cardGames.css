@@ -39,7 +39,7 @@
 }
 
 .text-category-card {
-  font-size: 0.7rem;
+  font-size: .8rem;
   color: gray;
 }
 .cont-card-1 {
@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  font-size: 1.5rem;
 }
 
 .add-to-cart {
@@ -78,7 +79,7 @@
     transition: .3s;
     z-index: 1;
     font-family: inherit;
-    color: #5a3dcb;
+    color: #967dfd;
     border-radius: 1rem;
     letter-spacing: 0.2rem;
    }
@@ -117,7 +118,7 @@
     transition: .3s;
     z-index: 1;
     font-family: inherit;
-    color: #cb3d3d;
+    color: #ff6161;
     border-radius: 1rem;
     letter-spacing: 0.2rem;
 }

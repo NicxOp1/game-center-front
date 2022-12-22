@@ -42,12 +42,13 @@
 }
 .title-profile {
   font-size: 1.5rem;
-  color: black;
+  color: white;
+  font-weight: 900;
   text-align: center;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .content-img-profile {
@@ -70,6 +71,7 @@ a {
   border-radius: 2rem;
   min-width: 55vw;
   margin: 0.5rem;
+  backdrop-filter: blur(4px);
 }
 
 .content-info-profile {
@@ -91,6 +93,7 @@ a {
 .text-profile-edit {
   font-size: 1.7rem;
   margin: 0.5rem;
+  color: white;
 }
 
 .content-link-profile {
@@ -107,7 +110,7 @@ a {
   width: 4em;
   height: 2em;
   margin: 0.5em;
-  background: rgba(37, 10, 63, 0.582);
+  background: rgb(47, 8, 84);
   color: white;
   border: none;
   border-radius: 0.625em;
@@ -120,12 +123,12 @@ a {
 }
 
 .btn-profile:hover {
-  color: black;
+  color: rgba(85, 8, 85, 0.938);
 }
 
 .btn-profile:after {
   content: "";
-  background: white;
+  background: black;
   position: absolute;
   z-index: -1;
   left: -20%;
@@ -189,6 +192,7 @@ a {
   width: 75vh;
   border: solid 3px #080312;
   align-items: center;
+  backdrop-filter: blur(4px);
 }
 
 .icon-btn {
@@ -290,7 +294,7 @@ a {
 .btn-profile-edit {
   width: fit-content;
   height: 45px;
-  background: white;
+  background: rgb(47, 8, 84);
   border-radius: 8px;
   font-size: 15px;
   font-weight: 700;
@@ -311,7 +315,7 @@ a {
   position: absolute;
   top: 0%;
   left: -50%;
-  background: rgba(37, 10, 63, 0.671);
+  background: black;
   transition: all 0.5s ease;
   z-index: -1;
   color: white;
@@ -325,7 +329,7 @@ a {
   position: absolute;
   top: 0%;
   left: 100%;
-  background: rgba(37, 10, 63, 0.671);
+  background: black;
   color: white;
   transition: all 0.5s ease;
   z-index: -1;

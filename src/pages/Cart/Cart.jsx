@@ -2,6 +2,8 @@ import React from "react";
 import "./cart.css";
 import { useSelector } from "react-redux";
 import BodyTable from "../../Components/BodyTable/BodyTable";
+import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default function Cart() {
   let { products } = useSelector((store) => store.cartReducer);
@@ -11,6 +13,11 @@ export default function Cart() {
   }
   const finish =(e) =>{
     e.preventDefault()
+    axios.post("http://localhost:8080/payment/",products)
+    .then(res =>{
+      window.location.replace(res.data.init_point)
+    })
+    .catch(err => err)
   }
   return (
     <div className="content-Cart">
@@ -40,7 +47,7 @@ export default function Cart() {
               <th>Total</th>
               <th>${total}</th>
               <th>
-                <button onClick={finish()} className="button">Finish</button>
+                <button onClick={finish} className="button">Finish</button>
               </th>
             </tr>
           </tfoot>

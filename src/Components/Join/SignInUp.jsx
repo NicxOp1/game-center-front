@@ -31,6 +31,7 @@ let  Login= async(e)=>{
   }
 
  const answer= await dispatch(SignIn(signIn))
+
   if(answer.payload.success){
    await Swal.fire({
       background:'#151513',
@@ -38,7 +39,7 @@ let  Login= async(e)=>{
       icon: 'success',
       title: `${answer.payload.response}`,
       showConfirmButton: false,
-      timer: 3500
+      timer: 5000
     })
     .then(()=>navigate('/')) 
   } else {
@@ -63,9 +64,12 @@ let  Login= async(e)=>{
     age: formRef.current.elements.age.value,
     password:formRef.current.elements.password.value,
   }
+
  
-   await axios.post(`${BASE}/auth/`,form)
+   await axios.post(`${BASE}/auth/`, form)
    .then((res=>{
+     console.log(res.data)
+ 
       try{
         if (res.data.success){
           Swal.fire({

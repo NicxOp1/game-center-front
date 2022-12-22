@@ -10,7 +10,6 @@ export default function LogOut({ props }) {
   //  console.log(token)
   let dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(props);
 
   function signOut() {
     Swal.fire({

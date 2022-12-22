@@ -23,14 +23,14 @@ let password= useRef()
 //para sign up
 let formRef= useRef()
 //login
-let  Login= async()=>{ 
+let  Login= async(e)=>{ 
+  e.preventDefault()
   let signIn={
     email: email.current.value,
     password: password.current.value
   }
 
  const answer= await dispatch(SignIn(signIn))
-console.log(answer.payload)
   if(answer.payload.success){
    await Swal.fire({
       background:'#151513',
@@ -64,9 +64,8 @@ console.log(answer.payload)
     password:formRef.current.elements.password.value,
   }
  
-   await axios.post(`${BASE}/auth/signin`, form)
+   await axios.post(`${BASE}/auth/`,form)
    .then((res=>{
- 
       try{
         if (res.data.success){
           Swal.fire({

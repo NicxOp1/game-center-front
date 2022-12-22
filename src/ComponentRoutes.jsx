@@ -9,6 +9,7 @@ import Store from "./Pages/Store/Store";
 import NotFoundPage from "./Pages/NotFound";
 import ProfileEdit from "./Components/Profile/ProfileEdit";
 import Library from "./Pages/LibraryPage/Library";
+import GameDitails from "./Pages/Ditails/GameDitails";
 
 export default function ComponentRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function ComponentRoutes() {
       <Route path="/SignInUp" element={<SignInUp />} />
       <Route path="/AddGame" element={<AddGame />} />
       <Route path="/Cart" element={<Cart />} />
+      <Route path="/Ditails/:id" element={<GameDitails />} />
 
       <Route path="/Profile" element={<Profile />} />
       <Route path="/ProfileEdit" element={<ProfileEdit />} />

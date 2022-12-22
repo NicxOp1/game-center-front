@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./store.css"
 import CardGames from '../../Components/CardGames/CardGames'
 import Search from '../../Components/Search/Search'
-import Checkbox from '../../Components/Checkbox/Checkbox'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import gameActions from '../../Redux/Actions/gamesActions'
@@ -12,8 +11,6 @@ export default function Store() {
   let searchRef = useRef(null)
   let categoryRef = useRef(null)
   let priceRef = useRef(null)
-  const [value, setValue] = useState('')
-  const [category, setCategory] = useState([])
   const dispatch = useDispatch()
   let [checketGame, setChecketGame] = useState([])
   const {getGame,filterGameInput} = gameActions
@@ -45,10 +42,7 @@ export default function Store() {
 
   };
 
-/*   useEffect(()=>{
-    
-  },[value,valores.category])
- */
+
 
 
   let checkMap = []
@@ -61,9 +55,7 @@ export default function Store() {
 
   return (
     <div className='content-store'>
-      {/* <h1 className='title-store'>Store</h1> */}
       <div className='content-CardDitails'>
-{/*         <CardDitails/> */}
       </div>
       <div className='content-cards2' style={{marginTop:"5rem"}}>
         <div>
@@ -88,7 +80,7 @@ export default function Store() {
         </div>
         <div className='cont-card-store'>
         {
-            game.map(e => <CardGames game={e} name={e.name} category={e.category} img={e.photo} price={e.price}>
+            game.map(e => <CardGames game={e} name={e.name} category={e.category} img={e.photo} price={e.price} id={e._id}>
             </CardGames>)
         }
         </div>

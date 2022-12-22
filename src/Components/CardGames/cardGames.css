@@ -184,5 +184,8 @@ button:hover {
     color: rgb(255, 255, 255);
    }
    /* remove-from-cart */
-   
+.content-category-store{
+  display: flex;
+  gap: .3rem;
+}
 

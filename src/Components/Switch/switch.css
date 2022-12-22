@@ -55,7 +55,7 @@
   .react-switch-label:active .react-switch-button {
     width: 60px;
   }
-  .active{
+  /* .active{
     color: rgba(85, 8, 85, 0.938);
     font-weight: 800;
-  }
+  } */

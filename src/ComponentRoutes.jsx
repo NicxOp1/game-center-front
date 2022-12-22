@@ -14,36 +14,34 @@ import { useSelector } from "react-redux";
 import ProtectedRoute from "./Components/ProtectedRoute";
 
 export default function ComponentRoutes() {
-
   let user = useSelector((store) => store.userReducer);
-  let admin = user.role === 'admin'
-  let logged = user.logged 
-  
-
+  let admin = user.role === "admin";
+  let logged = user.logged;
 
   return (
-      <Routes>
+    <Routes>
       {/*  NoLogin-Login  */}
       <Route path="/" element={<Home />} />
       <Route path="/*" element={<NotFoundPage />} />
       <Route path="/SignInUp" element={<SignInUp />} />
       <Route path="/Ditails/:id" element={<GameDitails />} />
       <Route path="/Store" element={<Store />} />
-       {/* End NoLogin-Login  */}
+      {/* End NoLogin-Login  */}
       {/* {/* Users Login */}
-       <Route element={<ProtectedRoute isAllowed={!!logged} reDirect={"/SignInUp"} />}>
-      <Route path="/Cart" element={<Cart />} />
-      <Route path="/Profile" element={<Profile />} />
-      <Route path="/ProfileEdit" element={<ProfileEdit />} />
-      <Route path="/Library" element={<Library />} />
-        </Route> 
+      <Route
+        element={<ProtectedRoute isAllowed={!!logged} reDirect={"/SignInUp"} />}
+      >
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/ProfileEdit" element={<ProfileEdit />} />
+        <Route path="/Library" element={<Library />} />
+      </Route>
       {/* End Users Login */}
       {/*  Admin */}
       <Route element={<ProtectedRoute isAllowed={!!admin} reDirect="/" />}>
-          <Route path="/AddGame" element={<AddGame />} />
-       </Route>
+        <Route path="/AddGame" element={<AddGame />} />
+      </Route>
       {/*  End Admin */}
-    
     </Routes>
   );
 }

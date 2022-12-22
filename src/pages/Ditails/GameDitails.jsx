@@ -33,7 +33,7 @@ console.log(id)
       </div>
       <div className='content-details-ditails'>
         <div className='content-img-descrip-ditails'>
-          <div>
+          <div className='content-img-ditails'>
             <img className='img-ditails' src={game.photo} alt="Need for Speed™ Unbound" />
           </div>
           <p className='description-p-ditails'>{game.description}</p>
@@ -59,7 +59,6 @@ console.log(id)
                 Buy
             </button>
           </div>
-          <p className='description-ditails'>rate</p>
         </div>  
       </div>
       </div>

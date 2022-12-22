@@ -66,46 +66,6 @@
   gap: 0.3rem;
 }
 
-button {
-  padding: 0.8em 1.8em;
-  border: 2px solid #5017c3;
-  position: relative;
-  overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 10px;
-  transition: 0.3s;
-  z-index: 1;
-  font-family: inherit;
-  color: #5a3dcb;
-  border-radius: 1rem;
-  letter-spacing: 0.2rem;
-}
-
-button::before {
-  content: "";
-  width: 0;
-  height: 300%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #4817c3;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
-}
-
-button:hover::before {
-  width: 105%;
-}
-
-
-button:hover {
-  color: rgb(255, 255, 255);
-}
-
 .add-to-cart {
     padding: 0.8em 1.8em;
     border: 2px solid #5017c3;

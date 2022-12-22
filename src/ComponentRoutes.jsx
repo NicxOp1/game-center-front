@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import SignInUp from "./pages/SignInUp";
-import AddGame from "./pages/AddGame";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart/Cart";
+import SignInUp from "./Pages/SignInUp";
+import AddGame from "./Pages/AddGame";
+import Home from "./Pages/Home";
+import Cart from "./Pages/Cart/Cart";
 import Profile from "./Components/Profile/Profile";
-import Store from "./pages/Store/Store";
-import NotFoundPage from "./pages/NotFound";
+import Store from "./Pages/Store/Store";
+import NotFoundPage from "./Pages/NotFound";
 import ProfileEdit from "./Components/Profile/ProfileEdit";
-import Library from "./pages/LibraryPage/Library";
-import GameDitails from "./pages/Ditails/GameDitails";
+import Library from "./Pages/LibraryPage/Library";
+import GameDitails from "./Pages/Ditails/GameDitails";
 import { useSelector } from "react-redux";
 import ProtectedRoute from "./Components/ProtectedRoute";
 

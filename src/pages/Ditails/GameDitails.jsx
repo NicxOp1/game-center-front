@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE } from '../../Api/url'
 import "./gameDitails.css"
-
+import Favs from '../../Components/Favs/Favs'
 export default function GameDitails() {
   const [game, setGame] = useState([])
 
@@ -37,11 +37,12 @@ console.log(id)
             <img className='img-ditails' src={game.photo} alt="Need for Speed™ Unbound" />
           </div>
           <p className='description-p-ditails'>{game.description}</p>
+          <Favs props={game}/>
         </div>
         <div className='content-data-ditails'>
           <div className='content-data-categor'>
             <div className='content-p-category'>
-              <p className='ditails-ditails'>Categoria</p>
+              <p className='ditails-ditails'>Category</p>
               <p className='ditails-ditails'>Date</p>
             </div>
             <div className='content-p-category'>
@@ -59,7 +60,7 @@ console.log(id)
                 Buy
             </button>
           </div>
-          <p className='description-ditails'>rate</p>
+          {/* <p className='description-ditails'>rate</p> */}
         </div>  
       </div>
       </div>

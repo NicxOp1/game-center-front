@@ -3,6 +3,7 @@ import "./cardGames.css";
 import cartActions from "../../Redux/Actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as LinkRoute } from "react-router-dom";
+
 export default function CardGames(props) {
   const dispatch = useDispatch();
   let { name, category, img, price, game,id } = props;
@@ -52,6 +53,7 @@ export default function CardGames(props) {
               </button>
             )}
           </div>
+
         </div>
       </div>
     </div>

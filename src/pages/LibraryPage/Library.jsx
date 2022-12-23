@@ -9,10 +9,14 @@ import { useNavigate } from "react-router-dom";
 export default function Library() {
    const dispatch= useDispatch()
    let {getGame}= gameActions
+  //  let {SaveFav}= favsActions
   let { id } = useSelector(state=>state.userReducer)
   let {game} = useSelector(state=> state.gamesReducer)
+  let {favorite}= useSelector(state=>state.favsReducer)
+  console.log(favorite);
+
   const navigate = useNavigate() 
-//  console.log(id)
+
   useEffect(() => {
        
     dispatch(getGame())
@@ -20,40 +24,58 @@ export default function Library() {
 
 
 
+
   let myGames= game.filter(game=> game.buyed.includes(id))
- 
+ console.log(myGames);
   
 
 
   return (
-    <>
+ 
       <div className="content-library">
         <div className="content-title-library">
-          <h1 className="first-title-library">Library of your Games</h1>
+          {/* <h1 className="first-title-library">Library of your Games</h1> */}
         </div>
         <div className="content-btn-cards-library">
           <div className="content-myfavority-library">
-            {/* <div className="title-library-one">
-              <h3 title-library-card>My Favourites</h3>
-            </div> */}
-            {/* <div className="cont-card-library-one">
-              {game.map((e) => (
+            <div className="title-library-one">
+              <h2 title-library-card>Favorites</h2>
+            </div>
+            <div className="cont-card-library-one">
+              {favorite.length > 0
+              ?(
+                favorite?.map((e) => (
                 <CardGames
-                  name={e.name}
+                name={e.name}
                   category={e.category}
                   img={e.photo}
                   price={e.price}
                   id={e._id}
                 />
-              ))}
-            </div> */}
-          </div>
+              ))
+              )
+               
+              :(
+                <div className="cont-card-notfound">
+                 
+                
+                  <h6> Want to buy?</h6>
+                  <div className="btn-header" onClick={()=>navigate(`/Store`)}>
+                Go to Store
+              </div> 
+                                
+                  </div>
+               
+
+              )}
+           </div>
         </div>
+   
         {/* arreglar logica */}
         <div className="content-btn-cards-library">
           <div className="content-myfavority-library">
             <div className="title-library-one">
-              <h3 title-library-card>My Games</h3>
+              <h2 title-library-card>My Games</h2>
             </div>
               {myGames.length > 0
               ?(
@@ -94,8 +116,8 @@ export default function Library() {
               )}
             </div>
           </div>
-        
+        </div>
       </div>
-    </>
+ 
   );
 }

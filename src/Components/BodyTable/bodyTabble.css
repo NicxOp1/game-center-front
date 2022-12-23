@@ -1,3 +1,8 @@
+.content-carry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button-add-unity {
   padding: 0.1em 0.3em;
   border: 2px solid #5017c3;
@@ -36,7 +41,11 @@
 .button-add-unity:hover {
   color: rgb(255, 255, 255);
 }
-
+.buton-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .button {
   padding: 0.1em 0.3em;
   border: 2px solid #cd1111;
@@ -94,14 +103,22 @@
   margin: 0.5rem;
   margin-left: 3rem;
 }
-
+.cont-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+}
+.cont-buy-usd {
+  width: 7rem;
+}
+.cont-buy-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .img-carrito {
   height: 100%;
   width: 100%;
   border-radius: 1rem;
-}
-@media (max-width: 585px) {
-  .img-carrito {
-    display: none;
-  }
 }

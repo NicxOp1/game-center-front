@@ -28,16 +28,15 @@ export default function Cart() {
   };
   return (
     <div className="content-Cart">
-      {
-  products.length === 0 ? (
-    <div className="cont-cart-img">
-      <h1 className="title">¡Ups! you don’t have games loaded to the cart...</h1>
-    </div>
-  ) : (
+      {products.length === 0 ? (
+        <div className="cont-cart-img">
+          <h1 className="title">
+            ¡Ups! you don’t have games loaded to the cart...
+          </h1>
+        </div>
+      ) : (
         <h1 className="title">Cart</h1>
-  )
-  }
-
+      )}
 
       {products.length === 0 ? (
         <div className="cont-cart-img">
@@ -48,39 +47,31 @@ export default function Cart() {
           />
         </div>
       ) : (
-        <table className="table">
-          <thead className="tableHeader">
-            <tr>
-              <th>Game</th>
-              <th>Price</th>
-              {/* <th>Amount</th> */}
-              <th className="subTotal">Sub Total</th>
-            </tr>
-          </thead>
+        <div className="table">
+          <div className="tableHeader">
+            <div className="carry-title">
+              <div className="subTotal">Game</div>
+              <div className="subTotal">Sub Total</div>
+            </div>
+          </div>
           <tbody className="tableBody">
             {products.map((e, i) => (
               <BodyTable game={e} key={i} />
             ))}
           </tbody>
           <tfoot>
-            <tr className="tableFooter">
-              <th></th>
-              <th>Total</th>
-              <th>${total}</th>
-              <th>
+            <div className="tableFooter">
+              <div>Total</div>
+              <div>${total}</div>
+              <div>
                 <button onClick={finish} className="button">
-                Finish purchase
+                  Finish purchase
                 </button>
-              </th>
-            </tr>
+              </div>
+            </div>
           </tfoot>
-        </table>
+        </div>
       )}
     </div>
   );
 }
-
-
-
-
-  

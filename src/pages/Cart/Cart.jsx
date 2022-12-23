@@ -6,31 +6,38 @@ import axios from "axios";
 
 export default function Cart() {
   let { products } = useSelector((store) => store.cartReducer);
-  let user = useSelector(store => store.userReducer)
+  let user = useSelector((store) => store.userReducer);
   console.log(user);
   let total = 0;
   if (products.length !== 0) {
     products.map((e) => (total = total + e.price * e.unity));
   }
-  const finish =(e) =>{
-    e.preventDefault()
+  const finish = (e) => {
+    e.preventDefault();
 
-    let order ={
-      products:products,
-      user: user.id
-    }
-    axios.post("http://localhost:8080/payment/",order)
-    .then(res =>{
-      window.location.replace(res.data.init_point)
-    })
-    .catch(err => err)
-  }
+    let order = {
+      products: products,
+      user: user.id,
+    };
+    axios
+      .post("http://localhost:8080/payment/", order)
+      .then((res) => {
+        window.location.replace(res.data.init_point);
+      })
+      .catch((err) => err);
+  };
   return (
     <div className="content-Cart">
       <h1 className="title">Cart</h1>
 
       {products.length === 0 ? (
-        <h1>No products</h1>
+        <div className="cont-cart-img">
+          <img
+            className="img-cart"
+            src="https://cdn-icons-png.flaticon.com/512/2762/2762885.png"
+            alt="no product"
+          />
+        </div>
       ) : (
         <table className="table">
           <thead className="tableHeader">
@@ -39,7 +46,6 @@ export default function Cart() {
               <th>Price</th>
               {/* <th>Amount</th> */}
               <th className="subTotal">Sub Total</th>
-              <th></th>
             </tr>
           </thead>
           <tbody className="tableBody">
@@ -53,7 +59,9 @@ export default function Cart() {
               <th>Total</th>
               <th>${total}</th>
               <th>
-                <button onClick={finish} className="button">Finish</button>
+                <button onClick={finish} className="button">
+                  Finish
+                </button>
               </th>
             </tr>
           </tfoot>

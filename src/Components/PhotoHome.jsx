@@ -1,5 +1,5 @@
 import React from "react";
-import "../Pages/home.css";
+import "../pages/home.css";
 import { Fade } from "react-awesome-reveal";
 // import { height } from "dom7";
 

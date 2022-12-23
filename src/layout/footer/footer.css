@@ -3,93 +3,82 @@
   padding: 0%;
   box-sizing: border-box;
 }
+.content-footer {
+  display: flex;
+}
 footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  padding-top:1rem;
+  padding-top: 1rem;
   background-color: #080312;
   color: white;
   min-height: 15vh;
 }
-footer:last-child{
- align-items: center;
-}
-.title-footer {
- /*  border: 1px solid orange; */
-  font-size: 1.75rem;
-  display: flex;
-  justify-content: center;
+footer:last-child {
   align-items: center;
-}
-.github-footer {
-/*   border: 1px solid blue; */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.content-github {
-  /* border: 1px solid red; */
-  display: flex;
-
-}
-.ancor-github {
-  margin: 0.2rem;
 }
 .text-footer {
-  text-decoration: none;
-  color: white;
   margin: 0.5rem;
 }
 .text-footer:hover {
-  color: #afffff;
-/*   font-weight: 700; */
-  text-decoration: underline;
+  font-weight: 700;
 }
-.info {
-  border: 1px solid violet;
+.content-logo-footer {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conten-git {
+  display: flex;
+  flex-direction: column;
+}
+.img-foter {
   height: 100%;
+}
+.slogan-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.content-aboutUs{
+.github-footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
 }
-.content-all{
-  display: flex;
-  
+.text-footer {
+  font-size: 1.2rem;
 }
-.content-footer{
+.front {
   display: flex;
-/*   border: 1px solid red; */
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+.cont-back-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cont-lengu {
+  width: 6rem;
+}
+.cont-img-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  margin: 0.7rem;
+}
+.img-footer-leng {
+  width: 100%;
+}
+.content-info-footer {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items:flex-start;
-  height: 8rem;
-  width: auto;
-/*   padding: .5rem; */
-}
-.content-footer li {
-  list-style: none;
-  margin: .2rem;
-}
-.content-footer li a{
-  text-decoration: none;
-  color: white;
-
-  margin: .5rem;
-}
-.content-footer li a:hover{
-  text-decoration: underline;
-
-}
-@media screen and (max-width: 768px) {
-  footer {
-    flex-direction: column;
-  }
 }

@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import favsActions from '../../Redux/Actions/favsActions'
 export default function Favs({props}) {
     let game= props
+
     let {  logged } = useSelector(state=>state.userReducer)
     let [favorites, setFavorites]=useState(false)
     let {SaveFav, unFav}= favsActions
@@ -13,7 +14,8 @@ export default function Favs({props}) {
 
     const toggleFavorite=()=>{
       if (logged){
-        setFavorites(!favorites)       
+        setFavorites(!favorites) 
+                
       } else{
         Swal.fire({
           background:'#000000',
@@ -29,18 +31,29 @@ export default function Favs({props}) {
         //     if (id)
         // }
     }
+let exist= favorite.some(favs=>favs._id=== game._id)
+
+console.log(exist)
+
 let handleSend=()=>{
-  if(!favorites){
-    dispatch(SaveFav(game))
- } else {
+  dispatch(SaveFav(game))
+   
+  }
+
+let handleRemove=()=>{
   dispatch(unFav(game))
- }
-}
+  }
+   
+    
+  
   return (
     <div onClick={toggleFavorite}>
-      
+      {exist=== true
+      ?(<img src='/images/fav.png'alt='add' id={game._id} onClick={handleRemove}/> )
+      :( <img src='/images/unfav.png' alt='added' id={game._id} onClick={handleSend}/> )
+      }
        
-        <img src={favorites ?'/images/fav.png' : '/images/unfav.png'}alt={favorites ?'added' : 'add'} onClick={handleSend}/>
+       
 
         
         </div>

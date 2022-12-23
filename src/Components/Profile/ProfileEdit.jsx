@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./profile.css";
 import axios from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { BASE } from "../../Api/url";
@@ -13,28 +13,29 @@ export default function ProfileEdit() {
   const forLastName = useRef();
   const forPhoto = useRef();
   const forAge = useRef();
-  const formRef = useRef();
   let token = useSelector((store) => store.userReducer);
-  console.log(token, "<==");
-  let { name, lastName, photo, age, email, password } = token;
-  // useEffect(() => {
-  //   return async function fetchdata() {
-  //     await axios
-  //       .get(
-  //         `${BASE}/auth/me${token.id}
-  //         `,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //           },
-  //         }
-  //       )
-  //       .then((res) => {
-  //         let userdata = res.data.response;
-  //         setUser(userdata);
-  //       });
-  //   };
-  // }, []);
+  let { name, lastName, photo, age } = token;
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    return async function fetchdata() {
+      await axios
+        .get(
+          `${BASE}/auth/me/${token.id}
+            `,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((res) => {
+          let userdata = res.data.response;
+          setUser(userdata);
+        });
+    };
+  }, []);
+
   async function saveData(e) {
     e.preventDefault();
     const saveData = {
@@ -42,17 +43,15 @@ export default function ProfileEdit() {
       lastName: forLastName.current.value,
       photo: forPhoto.current.value,
       age: forAge.current.value,
-      email: email,
     };
     console.log(token.token);
     try {
-      let headers = { headers: { "Authorization": `Bearer ${token.token}` } };
+      let headers = { headers: { Authorization: `Bearer ${token.token}` } };
       let res = await axios.patch(
         `${BASE}/auth/me/${token.id}`,
         saveData,
         headers
       );
-      console.log(res, "<=========");
       if (res.data.success) {
         Swal.fire({
           icon: "success",
@@ -135,7 +134,6 @@ export default function ProfileEdit() {
               }
               type="button"
             >
-              <div class="add-icon"></div>
               <div class="btn-txt">Edit Profile</div>
             </button>
             <button class="btn-profile-edit">

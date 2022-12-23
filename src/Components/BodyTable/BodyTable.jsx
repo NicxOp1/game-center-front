@@ -23,6 +23,9 @@ export default function BodyTable(props) {
 
   return (
     <tr className="tableBoddy">
+      <th>
+        <img className="img-carrito" src={game.photo} alt={game.name} />{" "}
+      </th>
       <th>{game.name}</th>
       <th>${game.price}</th>
       {/* <th className="unity-cell-table">

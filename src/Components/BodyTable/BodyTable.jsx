@@ -22,13 +22,15 @@ export default function BodyTable(props) {
   };
 
   return (
-    <tr className="tableBoddy">
+    <div className="tableBoddy">
       <th>
-        <img className="img-carrito" src={game.photo} alt={game.name} />{" "}
+        <img className="img-carrito" src={game.photo} alt={game.name} />
       </th>
-      <th>{game.name}</th>
-      <th>${game.price}</th>
-      {/* <th className="unity-cell-table">
+      <div className="cont-buy">{game.name}</div>
+      <div className="cont-buy-usd">{game.price * game.unity} USD</div>
+      <div className="buton-buy">
+        {/* <th className="cont-buy-price">${game.price}</th> */}
+        {/* <th className="unity-cell-table">
         {game.unity}
         <div className="buttons-add-remove">
           <button className="button-add-unity" id={game.name} onClick={add}>
@@ -39,12 +41,10 @@ export default function BodyTable(props) {
           </button>
         </div>
       </th> */}
-      <th>{game.price * game.unity}USD</th>
-      <th>
         <button className="button" id={game.name} onClick={deleteProduct}>
           X
         </button>
-      </th>
-    </tr>
+      </div>
+    </div>
   );
 }

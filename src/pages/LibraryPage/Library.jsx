@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import CardGames from "../../Components/CardGames/CardGames";
+import CardGamesFavs from "../../Components/CardGamesFavs/CardGamesFavs";
 import "./library.css";
 import {  useDispatch, useSelector } from "react-redux";
 import gameActions from "../../Redux/Actions/gamesActions";
@@ -14,7 +15,7 @@ export default function Library() {
   let { id } = useSelector(state=>state.userReducer)
   let {game} = useSelector(state=> state.gamesReducer)
   let {favorite}= useSelector(state=>state.favsReducer)
-
+  console.log(favorite);
 
   const navigate = useNavigate() 
 
@@ -45,7 +46,8 @@ export default function Library() {
               {favorite.length > 0
               ?(
                 favorite?.map((e) => (              
-                <CardGames
+                <CardGamesFavs
+                  game={e}
                 name={e.name}
                   category={e.category}
                   img={e.photo}
@@ -53,7 +55,7 @@ export default function Library() {
                   id={e._id}
                 >
                <Favs props={e}/>
-                </CardGames>
+                </CardGamesFavs>
               ))
               )
                

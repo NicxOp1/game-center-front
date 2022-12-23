@@ -8,7 +8,7 @@ const SaveFav= createAsyncThunk('saveFav', async(data)=>{
     }
 });
 const unFav= createAsyncThunk('unFav', async(data)=>{
-     console.log(data);
+ 
     return{
         fav: data
        

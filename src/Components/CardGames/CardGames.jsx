@@ -53,8 +53,11 @@ export default function CardGames(props) {
                 Buy
               </button>
             )}
-          </div>
+            <div className='favorite'>
 
+              { props.children}
+            </div>
+          </div>
         </div>
       </div>
     </div>

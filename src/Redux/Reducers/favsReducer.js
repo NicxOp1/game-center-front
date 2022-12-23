@@ -25,7 +25,7 @@ const favsReducer = createReducer(InitialState, (builder)=>{
                   
                 })
                 .addCase(unFav.fulfilled, (state, action)=>{
-                    console.log(action.payload.fav)
+                
                     let newState= state.favorite.filter(game=> game._id !== action.payload.fav._id) 
                     
                     return{

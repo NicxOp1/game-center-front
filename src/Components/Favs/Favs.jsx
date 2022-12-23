@@ -14,7 +14,7 @@ export default function Favs({props}) {
 
     const toggleFavorite=()=>{
       if (logged){
-        setFavorites(!favorites) 
+        setFavorites(true) 
                 
       } else{
         Swal.fire({
@@ -25,15 +25,13 @@ export default function Favs({props}) {
          showConfirmButton: false,
          timer: 3500
        })
+       setFavorites(false)
       }
 
-        // if(logged){
-        //     if (id)
-        // }
     }
 let exist= favorite.some(favs=>favs._id=== game._id)
 
-console.log(exist)
+
 
 let handleSend=()=>{
   dispatch(SaveFav(game))
@@ -48,7 +46,7 @@ let handleRemove=()=>{
   
   return (
     <div onClick={toggleFavorite}>
-      {exist=== true
+      {exist=== true && logged===true
       ?(<img src='/images/fav.png'alt='add' id={game._id} onClick={handleRemove}/> )
       :( <img src='/images/unfav.png' alt='added' id={game._id} onClick={handleSend}/> )
       }

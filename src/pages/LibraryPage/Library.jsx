@@ -3,38 +3,38 @@ import CardGames from "../../Components/CardGames/CardGames";
 import "./library.css";
 import {  useDispatch, useSelector } from "react-redux";
 import gameActions from "../../Redux/Actions/gamesActions";
+ import favsActions from '../../Redux/Actions/favsActions'
 import { useNavigate } from "react-router-dom";
+import Favs from "../../Components/Favs/Favs";
 
 
 export default function Library() {
    const dispatch= useDispatch()
    let {getGame}= gameActions
-  //  let {SaveFav}= favsActions
   let { id } = useSelector(state=>state.userReducer)
   let {game} = useSelector(state=> state.gamesReducer)
   let {favorite}= useSelector(state=>state.favsReducer)
-  console.log(favorite);
+
 
   const navigate = useNavigate() 
 
   useEffect(() => {
        
     dispatch(getGame())
-}, [dispatch, getGame])
+}, [])
 
 
 
 
   let myGames= game.filter(game=> game.buyed.includes(id))
- console.log(myGames);
-  
 
+
+     
 
   return (
  
       <div className="content-library">
         <div className="content-title-library">
-          {/* <h1 className="first-title-library">Library of your Games</h1> */}
         </div>
         <div className="content-btn-cards-library">
           <div className="content-myfavority-library">
@@ -44,14 +44,16 @@ export default function Library() {
             <div className="cont-card-library-one">
               {favorite.length > 0
               ?(
-                favorite?.map((e) => (
+                favorite?.map((e) => (              
                 <CardGames
                 name={e.name}
                   category={e.category}
                   img={e.photo}
                   price={e.price}
                   id={e._id}
-                />
+                >
+               <Favs props={e}/>
+                </CardGames>
               ))
               )
                
@@ -71,7 +73,6 @@ export default function Library() {
            </div>
         </div>
    
-        {/* arreglar logica */}
         <div className="content-btn-cards-library">
           <div className="content-myfavority-library">
             <div className="title-library-one">

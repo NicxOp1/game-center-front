@@ -61,9 +61,9 @@ export default function Cart() {
           </tbody>
           <tfoot>
             <div className="tableFooter">
-              <div>Total</div>
-              <div>${total}</div>
-              <div>
+              <div className="footer-but">Total</div>
+              <div className="footer-but">${total}</div>
+              <div className="footer-but">
                 <button onClick={finish} className="button">
                   Finish purchase
                 </button>

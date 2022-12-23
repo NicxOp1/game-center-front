@@ -9,9 +9,14 @@
   padding-top: 5%;
 }
 .title {
-  color: #09e6c9c2;
+  color: white;
+  font-weight: 700;
+  font-size: 3rem;
 }
-
+.footer-but {
+  width: 6rem;
+  color: white;
+}
 .table {
   padding: 1rem;
   width: 70rem;
@@ -40,6 +45,7 @@
   border-left: none;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   padding: 5px;
 }
 .tableBody {
@@ -66,6 +72,8 @@
 .subTotal {
   text-align: center;
   width: 37rem;
+  color: white;
+  font-weight: 600;
 }
 .cont-buy-usd {
   display: flex;

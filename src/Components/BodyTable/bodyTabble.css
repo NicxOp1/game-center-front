@@ -108,9 +108,11 @@
   justify-content: center;
   align-items: center;
   width: 10rem;
+  color: white;
 }
 .cont-buy-usd {
   width: 7rem;
+  color: white;
 }
 .cont-buy-price {
   display: flex;

@@ -6,6 +6,8 @@ import LogOut from "../../Components/LogOut";
 
 export default function NavLinks() {
   let { role, logged } = useSelector((state) => state.userReducer);
+  let  {products} = useSelector((state) => state.cartReducer);
+
 
   return (
     <>
@@ -22,9 +24,22 @@ export default function NavLinks() {
           <LinkRouter to="/Library" className="btn-header">
             LIBRARY
           </LinkRouter>
-          <LinkRouter to="/Cart" className="btn-header">
+
+          {
+            products.length < 1 ? (
+                <LinkRouter to="/Cart" className="btn-header">
             CART
           </LinkRouter> 
+            ):(
+              <LinkRouter to="/Cart" className="btn-header flex-row">
+            CART 
+            <div className="container-numberCart">
+            <span className="cantidadproducts">        {products.length }</span>
+            </div>
+          </LinkRouter> 
+            )
+          }
+        
           <LinkRouter to="/Profile" className="btn-header">
             PROFILE
           </LinkRouter>
@@ -43,3 +58,8 @@ export default function NavLinks() {
     </>
   );
 }
+
+
+
+
+

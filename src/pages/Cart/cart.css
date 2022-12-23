@@ -9,7 +9,7 @@
   padding-top: 5%;
 }
 .title {
-  color: #00fffb;
+  color: #09e6c9c2;
 }
 
 .table {
@@ -39,7 +39,7 @@
   border: 2px solid #00fffb;
   border-left: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 5px;
 }
 .tableBody {

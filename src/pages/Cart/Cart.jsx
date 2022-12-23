@@ -28,13 +28,22 @@ export default function Cart() {
   };
   return (
     <div className="content-Cart">
-      <h1 className="title">Cart</h1>
+      {
+  products.length === 0 ? (
+    <div className="cont-cart-img">
+      <h1 className="title">¡Ups! you don’t have games loaded to the cart...</h1>
+    </div>
+  ) : (
+        <h1 className="title">Cart</h1>
+  )
+  }
+
 
       {products.length === 0 ? (
         <div className="cont-cart-img">
           <img
             className="img-cart"
-            src="https://cdn-icons-png.flaticon.com/512/2762/2762885.png"
+            src="https://i.postimg.cc/XNpxgJGy/Sinm-removebg-preview.png"
             alt="no product"
           />
         </div>
@@ -60,7 +69,7 @@ export default function Cart() {
               <th>${total}</th>
               <th>
                 <button onClick={finish} className="button">
-                  Finish
+                Finish purchase
                 </button>
               </th>
             </tr>
@@ -70,3 +79,8 @@ export default function Cart() {
     </div>
   );
 }
+
+
+
+
+  

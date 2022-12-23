@@ -3,10 +3,11 @@ import "./cardGames.css";
 import cartActions from "../../Redux/Actions/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link as LinkRoute } from "react-router-dom";
+
 export default function CardGames(props) {
   const dispatch = useDispatch();
   let { name, category, img, price, game,id } = props;
-  console.log(id);
+  // console.log(id);
 
       /* const [hover,setHover] = useState(false) */
   let products = useSelector((store) => store.cartReducer.products);
@@ -52,6 +53,10 @@ export default function CardGames(props) {
                 Buy
               </button>
             )}
+            <div className='favorite'>
+
+              { props.children}
+            </div>
           </div>
         </div>
       </div>

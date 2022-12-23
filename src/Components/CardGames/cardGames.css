@@ -149,4 +149,6 @@
   display: flex;
   gap: .3rem;
 }
-
+.favorite{
+  padding-left: 1.3rem;
+}

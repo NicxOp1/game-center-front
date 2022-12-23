@@ -5,6 +5,7 @@ import Search from '../../Components/Search/Search'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import gameActions from '../../Redux/Actions/gamesActions'
+import Favs from '../../Components/Favs/Favs'
 
 
 export default function Store() {
@@ -81,7 +82,9 @@ export default function Store() {
         <div className='cont-card-store'>
         {
             game.length > 0 ?
-            game.map(e => <CardGames game={e} id={e._id} name={e.name} category={e.category} img={e.photo} price={e.price} />) :
+            game.map(e => <CardGames game={e} id={e._id} name={e.name} category={e.category} img={e.photo} price={e.price}>
+              <Favs props={e}/>
+            </CardGames>) :
             <img src='https://i.postimg.cc/3JFv2722/istockphoto-1291185387-612x612-removebg-preview.png' alt="gamenofound"/>
           
         }

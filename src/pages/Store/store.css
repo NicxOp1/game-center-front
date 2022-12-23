@@ -32,7 +32,7 @@
     width: 100%;
     gap: 5rem;
     padding: 2rem 2rem 4rem 2rem;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .select-store{
@@ -63,7 +63,23 @@
 }
 
 
+@media screen and (max-width: 620px)
+{
+    .image-notfound-search{
+        width: 550px;
+    }
+}
 
+@media screen and (max-width: 550px)
+{
+    .image-notfound-search{
+        width: 450px;
+    }
+}
 
-
-
+@media screen and (max-width: 450px)
+{
+    .image-notfound-search{
+        width: 350px;
+    }
+}

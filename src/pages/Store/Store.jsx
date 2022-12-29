@@ -21,7 +21,7 @@ export default function Store() {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/games/`)
+    axios.get(`https://game-center.onrender.com/games/`)
         .then(res => setChecketGame(res.data.res))
         .catch(err => console.log(err.message))
     dispatch(getGame())

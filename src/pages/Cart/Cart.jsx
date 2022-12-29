@@ -20,7 +20,7 @@ export default function Cart() {
       user: user.id,
     };
     axios
-      .post("http://localhost:8080/payment/", order)
+      .post("https://game-center.onrender.com/payment/", order)
       .then((res) => {
         window.location.replace(res.data.init_point);
       })

@@ -1,0 +1,84 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.content-footer {
+  display: flex;
+}
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 1rem;
+  background-color: #080312;
+  color: white;
+  min-height: 15vh;
+}
+footer:last-child {
+  align-items: center;
+}
+.text-footer {
+  margin: 0.5rem;
+}
+.text-footer:hover {
+  font-weight: 700;
+}
+.content-logo-footer {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conten-git {
+  display: flex;
+  flex-direction: column;
+}
+.img-foter {
+  height: 100%;
+}
+.slogan-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.github-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+.text-footer {
+  font-size: 1.2rem;
+}
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cont-back-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cont-lengu {
+  width: 6rem;
+}
+.cont-img-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  margin: 0.7rem;
+}
+.img-footer-leng {
+  width: 100%;
+}
+.content-info-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

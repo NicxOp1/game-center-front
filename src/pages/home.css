@@ -1,0 +1,272 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+h1,h3,h2,h4{
+  font-weight: bold;
+}
+.divHome1{
+/*   height: 140vh; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('../data/Rectangle19.png') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* gap:-1rem; */
+  width: 100%;
+/*   justify-content: space-evenly; */
+}
+.titleHome{
+  display: flex;
+  z-index: 9;
+  justify-content: center;
+  flex-direction:column ;
+  align-items: center;
+  position: absolute;
+  height:19rem!important;
+  width: 100%;
+  backdrop-filter: blur(3px);
+}
+.titleHome img{
+height: 25rem;
+width: 50rem;
+}
+.titleHome h1{
+  color: white;
+  font-size: 2rem;
+  margin-top: -8rem;
+}
+.divHome1 h2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 10;
+  padding: .5rem;
+  margin-top: 27.5rem;
+}
+.divHome2 h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.photoContainerHome{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 20rem;
+  margin-bottom: 14rem;
+  width: 100%;
+}
+.css-1gzxeik{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.divHome2{
+  margin-top: -1.5rem;
+  height: auto;
+  background-image: linear-gradient(180deg,black, rgb(129, 23, 129) );
+  width: 100%;
+}
+.fade{
+  position: relative;
+  height: 100%!important;
+  width: 100%!important;
+}
+.imgDiv{
+/*   position: relative; */
+/*   box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0.3em 0.3em 1em rgba(0,0,0,0.3); */
+ /*  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter:blur(3rem); */
+  display: flex;
+  border-radius: 1rem;
+  height: auto;
+  width: auto;
+  justify-content: center;
+/*   padding: 1rem; */
+  align-items: center;
+z-index: 15;
+}
+.imgDiv img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  padding: 0rem;
+}
+
+.imgDivData{
+ position: absolute;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+/*   backdrop-filter:blur(3rem); */
+  border-radius: 1rem;
+  height:100%;
+  margin-left: -9rem;
+  width: 100%;
+
+  align-items: center;
+  z-index: 20;
+}
+
+.containerPhoto{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 115%;
+
+}
+.containerPhoto figure{
+  position: relative;
+  height: 80%;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0px 15px 25px rgba(0, 0,0,0.50);
+  cursor: pointer;
+}
+.containerPhoto figure img{
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  transition: all 500ms ease-out;
+}
+.containerPhoto figure .capa{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background:rgba(255, 255, 255, 0.634);
+  backdrop-filter:blur(5px);
+  transition: all 500ms ease-out;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+}
+.containerPhoto figure:hover> .capa{
+  opacity: 1;
+  visibility: visible;
+}
+.containerPhoto figure:hover> .capa h3{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.containerPhoto figure .capa h3{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: all 500ms ease-out;
+  margin-top: 2rem;
+}
+.containerPhoto figure:hover> img{
+  transform: scale(1.3);
+}
+
+
+.containerPhoto figure .capa p{
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+/*   line-height: 1.5; */
+  width: 100%;
+  max-width: 5rem;
+  text-align:center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 1rem;
+  background-color: #b856d1;
+  /* backdrop-filter:blur(5px); */
+ /*  margin: auto; */
+}
+@media  screen and (max-width:1000px)  {
+  .divHome1{
+    gap: 1rem;
+  }
+  .containerPhoto figure{
+    position: relative;
+    height: 150px;
+    width:230px;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 15px 25px rgba(0, 0,0,0.50);
+    cursor: pointer;
+  }
+  .photoContainerHome{
+    gap: 1rem;
+  }
+}
+@media  screen and (max-width:767px)  {
+  .titleHome img{
+    height: 25rem;
+    width: 40rem;
+    }
+}
+@media  screen and (max-width:650px)  {
+  .titleHome{
+    gap: 3rem;
+  }
+  .photoContainerHome{
+    margin-bottom: 11rem!important;
+  }
+  .titleHome h1 {
+/*     font-size: 1.25rem; */
+font-size: 1.25rem;
+  }
+  .titleHome img{
+    height: 15rem!important;
+    width: 30rem!important;
+    }
+}
+@media  screen and (max-width:600px)  {
+  .titleHome img{
+    height: 20rem!important;
+    width: 28rem!important;
+    }
+    .titleHome{
+      justify-content: space-between;
+    }
+    .photoContainerHome{
+      gap: 1rem;
+      margin-bottom: 4.75rem!important;
+    }
+}
+@media screen and (max-width:475px) {
+  .divHome1{
+    height: 272vh!important;
+  }
+  .titleHome img{
+    height: 14rem!important;
+    width: 24rem!important;
+    }
+    .photoContainerHome{
+      gap: 3rem;
+    }
+}
+@media  screen and (max-width:425)  {
+  .titleHome img{
+    height: 8rem!important;
+    width: 10rem!important;
+    }
+    
+    
+    .photoContainerHome{
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items:center;
+      height: auto;
+
+      width: 100%;
+      
+    }
+}

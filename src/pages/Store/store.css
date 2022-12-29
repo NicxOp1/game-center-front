@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-store{
+    background: linear-gradient(#02070d,#032b4f);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.title-store{
+    color: rgb(216, 216, 216);
+/*     text-align: center; */
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: .7rem;
+}
+
+.content-CardDitails{
+    width: 100%;
+}
+
+.content-checkbox-select{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap: 5rem;
+    padding: 2rem 2rem 4rem 2rem;
+    justify-content: space-around;
+}
+
+.select-store{
+    height: 2rem;
+    width: 12rem;
+    background-color: rgb(24, 24, 44);
+    color: rgba(244, 244, 244, 0.735);
+    border-radius: .6rem 0rem .6rem 0rem;
+    letter-spacing: .2rem;
+}
+
+.options-select-store{
+    color: rgb(163, 163, 163);
+    background-color: rgb(22, 22, 22);
+    font-size: 1rem;
+    letter-spacing: 1rem;
+}
+
+
+.content-checkbox-store{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.check-label{
+    color: aliceblue;
+}
+
+
+@media screen and (max-width: 620px)
+{
+    .image-notfound-search{
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+    .image-notfound-search{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 450px)
+{
+    .image-notfound-search{
+        width: 350px;
+    }
+}

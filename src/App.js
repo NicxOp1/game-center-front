@@ -1,34 +1,33 @@
-// import { Route, Routes } from 'react-router-dom'
-// import { BrowserRouter } from 'react-router-dom';
-// import logo from './logo.svg';
-import './App.css';
+import ComponentRoutes from "./ComponentRoutes";
+import Layout from "./layout/Layout";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import userActions from "./Redux/Actions/userActions";
+/* import { Footer } from "./layout/footer/Footer";
+import Header from "./layout/header/Header";
+import Home from "./pages/Home"; */
 
 function App() {
-  return (
-    //   <>
-    //   <BrowserRouter>
-    //     <Routes>
-    //       <Route path='/' element={<Home />} />
-    //     </Routes>
-    //   </BrowserRouter>
-    // </>
+  //Keep log
+  let { logWithToken } = userActions;
+  // let { role, logged } = useSelector(state=>state.userReducer)
+  const dispatch = useDispatch();
 
-    <div className="App">
-      <header className="App-header">
-        <img src='/public/images/icon.png' className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("token"));
+
+    if (token) {
+      dispatch(logWithToken(token.token.user));
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  return (
+    <>
+      <Layout>
+        <ComponentRoutes />
+      </Layout>
+    </>
   );
 }
 

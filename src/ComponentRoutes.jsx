@@ -23,7 +23,12 @@ export default function ComponentRoutes() {
       {/*  NoLogin-Login  */}
       <Route path="/" element={<Home />} />
       <Route path="/*" element={<NotFoundPage />} />
-      <Route path="/SignInUp" element={<SignInUp />} />
+      <Route
+        element={<ProtectedRoute isAllowed={!logged} reDirect={"/Profile"} />}
+      >
+        <Route path="/SignInUp" element={<SignInUp />} />
+      </Route>
+      
       <Route path="/Ditails/:id" element={<GameDitails />} />
       <Route path="/Store" element={<Store />} />
       {/* End NoLogin-Login  */}

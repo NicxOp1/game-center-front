@@ -18,9 +18,10 @@ export default function Cart() {
     let order = {
       products: products,
       user: user.id,
+      date: new Date()
     };
     axios
-      .post("http://localhost:8080/payment/", order)
+      .post("https://game-center.onrender.com/payment/", order)
       .then((res) => {
         window.location.replace(res.data.init_point);
       })
@@ -31,7 +32,7 @@ export default function Cart() {
       {products.length === 0 ? (
         <div className="cont-cart-img">
           <h1 className="title">
-            ¡Ups! you don’t have games loaded to the cart...
+            ¡Oops! you don’t have games loaded to the cart...
           </h1>
         </div>
       ) : (

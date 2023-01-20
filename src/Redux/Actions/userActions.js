@@ -53,7 +53,7 @@ const logWithToken = createAsyncThunk("logWithToken", async (token) => {
   let headers = { headers: { Authorization: `Bearer ${token}` } };
   try {
     let user = await axios.post(
-      `http://localhost:8080/auth/token`,
+      `https://game-center.onrender.com/auth/token`,
       null,
       headers
     );

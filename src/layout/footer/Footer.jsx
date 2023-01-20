@@ -142,7 +142,7 @@ function Footer() {
           <div className="cont-img-footer">
             <img
               className="img-footer-leng"
-              src="https://assets.stickpng.com/thumbs/62cc1b51150d5de9a3dad5f8.png"
+              src="https://www.svgrepo.com/show/354202/postman-icon.svg"
               alt="postman"
             />
           </div>

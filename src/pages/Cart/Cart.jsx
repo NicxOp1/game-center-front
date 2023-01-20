@@ -21,7 +21,7 @@ export default function Cart() {
       date: new Date()
     };
     axios
-      .post("http://localhost:8080/payment/", order)
+      .post("https://game-center.onrender.com/payment/", order)
       .then((res) => {
         window.location.replace(res.data.init_point);
       })

@@ -1,1 +1,1 @@
-export const BASE = 'http://localhost:8080'
+export const BASE = 'https://game-center.onrender.com'

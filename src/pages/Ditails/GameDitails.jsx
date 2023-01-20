@@ -4,9 +4,12 @@ import { useParams } from 'react-router-dom'
 import { BASE } from '../../Api/url'
 import "./gameDitails.css"
 import Favs from '../../Components/Favs/Favs'
+import { useDispatch, useSelector } from "react-redux";
+import cartActions from '../../Redux/Actions/cartActions'
+
 export default function GameDitails() {
   const [game, setGame] = useState([])
-
+  const dispatch = useDispatch()
   let { id } = useParams()
 // console.log(id)
   useEffect(() => {
@@ -16,6 +19,23 @@ export default function GameDitails() {
         .catch((error) => console.log(error))
 
     }, [id])
+
+    let products = useSelector((store) => store.cartReducer.products);
+  let productOnCart = products.filter((e) => e._id === game._id);
+  const addToCart = (e) => {
+    e.preventDefault();
+    setGame({
+      ...game,
+      unity: 1,
+    })  
+    dispatch(cartActions.addGame(game));
+  };
+
+
+  const removeToCart = (e) => {
+    e.preventDefault();
+    dispatch(cartActions.deleteProduct(game));
+  }
 
 
     if (game.length !== 0){
@@ -56,9 +76,15 @@ export default function GameDitails() {
           </div>
           <div className='content-price-ditails'>
             <p className='description-ditails'><span className='ditails-ditails-price'>Price</span> ${game.price}</p>
-            <button className="add-to-cart">
+            {productOnCart.length > 0 ? (
+              <button className="remove-from-cart" onClick={removeToCart}>
+                Remove
+              </button>
+            ) : (
+              <button className="add-to-cart" onClick={addToCart}>
                 Buy
-            </button>
+              </button>
+            )}
           </div>
         </div>  
       </div>
